@@ -5,11 +5,47 @@ import seaborn as sns
 import pandas as pd
 import os
 
+
+# === Settings ===
+base = 9
+matplotlib.rcParams.update({
+    'font.size': base,
+    'axes.labelsize': base,
+    'axes.titlesize': base,
+    'xtick.labelsize': base,
+    'ytick.labelsize': base,
+    'legend.fontsize': base,
+    'font.family': 'Arial',
+})
+ms = 6
+lw=2
 ## General
+
 def cm2inch(x): return float(x)/2.54
 
 plotwidth    = cm2inch(8.90)
 
+
+
+def get_figsize(layout="horizontal", width_cm=8.9):
+    if layout == "horizontal":
+        return (1.5*plotwidth, 0.5*plotwidth)
+    elif layout == "vertical":
+        return (1.5*plotwidth, 1.0*plotwidth)
+    elif layout == "square":
+        return (1.5*plotwidth, 1.5*plotwidth)
+    elif layout == "golden":
+        return (cm2inch(width_cm), cm2inch(width_cm * 0.618))
+    else:
+        raise ValueError("Unknown layout")
+
+#=======Functions for allele frequency plots
+
+# Helper function to select trajectory
+def select_traj(freq_vs_time, pos, state, q):
+    if state > q:
+        raise ValueError("State must be in [1, q]")
+    return freq_vs_time[(pos - 1) * q + state - 1, :]
 
 #=======Functions for Fig-EMD_simulated_data
 
@@ -105,10 +141,14 @@ def plot_auc_bar(data, label, ax=None):
 
     ax.set_ylim(0.0, 1.01)
     ax.set_xlim(0.0, 1.0)
-    ax.set_xlabel("frequency")
-    ax.set_ylabel("Fix/loss AUROC")
+    ax.set_xticks([0.0,0.5,1.0])
+
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    ax.set_yticks([0.0, 0.5, 1.0]) 
+
     ax.set_title(label, loc='left')
-    ax.legend(loc='upper right', frameon=False)
+    ax.legend(loc=(0.05,0.77), handlelength=1.0, handleheight=0.5, handletextpad=0.2, labelspacing=0.3 ,frameon=False)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
@@ -121,7 +161,7 @@ def plot_fixation_probability(data, label, ax=None):
     frequencies = np.arange(0.1, 1.0, 0.1)
 
     # Style
-    lw = 2
+    lw = 1
 
     # Colors
     blue_main = (0.3, 0.45, 0.8)
@@ -132,12 +172,12 @@ def plot_fixation_probability(data, label, ax=None):
 
     # Create new axis if not provided
     if ax is None:
-        fig, ax = plt.subplots(figsize=(2.5, 4.5), dpi=100)
+        fig, ax = plt.subplots(figsize=(10.5, 6.5), dpi=100)
     else:
         fig = ax.figure
 
     # Plot lines
-    ax.plot(frequencies, frequencies, linestyle='--', color='black', label="")
+    ax.plot(frequencies, frequencies, linestyle='--', color='black', linewidth=lw,label="")
     ax.plot(frequencies, data["fix_top25"],   color=blue_light, linewidth=lw, label="top 25%")
     ax.plot(frequencies, data["fix_top"],     color=blue_main,  linewidth=lw, label="top 50%")
     ax.plot(frequencies, data["fix_bottom25"],color=red_light,  linewidth=lw, label="bottom 25%")
@@ -145,11 +185,15 @@ def plot_fixation_probability(data, label, ax=None):
     ax.plot(frequencies, data["fix_null"],    color=gray,       linewidth=lw, label="all mutations")
 
     ax.set_xlim(0.0, 1.01)
+    ax.set_xticks([0.0, 0.5, 1.0]) 
     ax.set_ylim(-0.01, 1.01)
-    ax.set_xlabel("frequency")
-    ax.set_ylabel("Fixation probability")
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    ax.set_yticks([0.0, 0.5, 1.0]) 
     ax.set_title(label, loc='left')
-    ax.legend(loc=(0.01,0.75), frameon=False)
+    #ax.legend(loc=(0.01,0.75), frameon=False)
+    ax.legend(loc=(0.7, 0.0),handlelength=0.5, handleheight=0.5, handletextpad=0.2, labelspacing=0.1,  frameon=False)
+
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
@@ -161,12 +205,12 @@ blue = (0.3, 0.45, 0.8)
 green = 'green'
 gray = 'gray'
 def plot_panel(ax, x, y_null, y_lb, y_pred, title, ylabel="", xlabel="", xticks=None, yticks=None, yticklabels=True, xticklabels=None):
-    ax.plot(x, y_null, color=gray, linewidth=2, marker='o', markersize=3, label="null")
-    ax.plot(x, y_lb, color=green, linewidth=2, marker='^', markersize=3, alpha=0.5, label="lower bound")
-    ax.plot(x, y_pred, color=blue, linewidth=2, marker='D', markersize=3, label="prediction")
+    ax.plot(x, y_null, color=gray, linewidth=1, marker='o', markersize=1, alpha=0.8,label="null")
+    ax.plot(x, y_lb, color=green, linewidth=1, marker='^', markersize=1, alpha=0.8, label="lower bound")
+    ax.plot(x, y_pred, color=blue, linewidth=1, marker='D', markersize=1,alpha=0.8, label="prediction")
     ax.set_title(title, loc='left')
     ax.set_ylim(0, 12)
-
+# Inside plot_panel, or directly for the ax:
     if ylabel:
         ax.set_ylabel(ylabel)
     if xlabel:
@@ -279,17 +323,193 @@ def get_enrichment_plot_H1N1_NA(enrichment_dict_,ax, show_xlabel=True, show_ylab
         show_ylabel=show_ylabel
     )
 
-# === Final layout ===
-def make_all_enrichment_layout():
-    fig, axs = plt.subplots(2, 2, figsize=(2*1.5*plotwidth, 1.5*plotwidth), constrained_layout=True)
     
+#======Functions for Clades evolution Figure======
 
-    get_enrichment_plot_H3N2_HA(axs[0, 0], show_xlabel=False, show_ylabel=True)
-    get_enrichment_plot_H1N1_HA(axs[0, 1], show_xlabel=False, show_ylabel=False)
+def get_contrast_color(rgb_color):
+    # Convert to luminance using standard formula
+    r, g, b = rgb_color[:3]
+    luminance = 0.299 * r + 0.587 * g + 0.114 * b
+    return 'black' if luminance > 0.6 else 'white'
 
-    get_enrichment_plot_H3N2_NA(axs[1, 0], show_xlabel=True, show_ylabel=True)
-    get_enrichment_plot_H1N1_NA(axs[1, 1], show_xlabel=True, show_ylabel=False)
 
-    return fig, axs    
+def get_clade_color_map(all_clades, colormap='tab20'):
+    cmap = plt.get_cmap(colormap)
+    colors = cmap(np.linspace(0, 1, len(all_clades)))
+    return dict(zip(sorted(all_clades), colors))
+
+
+def plot_clade_dynamics_with_fitness(df_pop, clade_color_map, title='', normalize_to_100=True, label_threshold=0.001,ax=None):
+    df = df_pop.copy()
+    df['clade'] = df['clade'].astype(str).str.strip()
+    df['Date'] = pd.to_datetime(df['Date'])
+
+    if normalize_to_100:
+        df['frequency'] = df.groupby('Date')['frequency'].transform(lambda x: 100 * x / x.sum())
+    else:
+        df['frequency'] = df.groupby('Date')['frequency'].transform(lambda x: x / x.sum())
+
+    pivot = df.pivot_table(index='Date', columns='clade', values='frequency', aggfunc='sum').fillna(0)
+    pivot = pivot.sort_index()
+
+    max_freqs = pivot.max()
+    clades_to_plot = max_freqs[max_freqs > (label_threshold * 100 if normalize_to_100 else label_threshold)].index
+    pivot = pivot[clades_to_plot]
+
+    x = pivot.index
+    Y = pivot.values.T
+    clades = pivot.columns
+
+    fitness_pivot = df.pivot_table(index='Date', columns='clade', values='fitness', aggfunc='mean').fillna(0)
+
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(8, 3.5))
+    else:
+        fig = ax.figure
+
+    colors = [clade_color_map[clade] for clade in clades]
+
+    ax.stackplot(x, Y, labels=clades, colors=colors)
+    ax.set_title(title, loc='left')
+    ax.set_ylabel('Frequency (%)' if normalize_to_100 else 'Frequency')
+    ax.set_xlabel('Observation date (days)')
+    ax.set_ylim(0, 100 if normalize_to_100 else 1)
+
+    # --- Match x-tick logic from four-forecast plot ---
+    tick_positions = pd.date_range(start=x[0], end=x[-1], freq='3M')
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels([d.strftime('%Y-%m-%d') for d in tick_positions], rotation=35)
+
+    ax.legend(loc='upper left', bbox_to_anchor=(1.01, 1.02), title="Clade", ncol=1,handletextpad=0.2, columnspacing=0.3, handlelength=1.0,frameon=False  )
+
+    cumulative_Y = np.cumsum(Y, axis=0)
+    base_Y = np.vstack([np.zeros(cumulative_Y.shape[1]), cumulative_Y[:-1]])
+
+    def get_contrast_color(rgb_color):
+        r, g, b = rgb_color[:3]
+        luminance = 0.299 * r + 0.587 * g + 0.114 * b
+        return 'black' if luminance > 0.6 else 'white'
+
+    ax.set_xlim(x[0], x[-1])
+    return fig, ax
+
     
+def plot_clade_dynamics_with_four_forecasts(df_past, df_forecast_rm, df_forecast1, df_forecast2, df_forecast3,
+                                            title='', clade_color_map=None, colormap='tab20',
+                                            normalize_to_100=True, label_threshold=0.001,ax=None):
+    df_past = df_past.copy()
+    df_forecast_rm = df_forecast_rm.copy()
+    df_forecast1 = df_forecast1.copy()
+    df_forecast2 = df_forecast2.copy()
+    df_forecast3 = df_forecast3.copy()
+
+    for df in [df_past, df_forecast_rm, df_forecast1, df_forecast2, df_forecast3]:
+        df['Date'] = pd.to_datetime(df['Date'])
+
+    df = pd.concat([df_past, df_forecast_rm, df_forecast1, df_forecast2, df_forecast3])
+    df['clade'] = df['clade'].astype(str).str.strip()
+
+    if normalize_to_100:
+        df['frequency'] = df.groupby('Date')['frequency'].transform(lambda x: 100 * x / x.sum())
+    else:
+        df['frequency'] = df.groupby('Date')['frequency'].transform(lambda x: x / x.sum())
+
+    pivot = df.pivot_table(index='Date', columns='clade', values='frequency', aggfunc='sum').fillna(0)
+    pivot = pivot.sort_index()
+
+    max_freqs = pivot.max()
+    clades_to_plot = max_freqs[max_freqs > (label_threshold * 100 if normalize_to_100 else label_threshold)].index
+    pivot = pivot[clades_to_plot]
+
+    x = pivot.index
+    Y = pivot.values.T
+    clades = pivot.columns
+
+    fitness_pivot = df.pivot_table(index='Date', columns='clade', values='fitness', aggfunc='mean').fillna(0)
+
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(8, 3.5))
+    else:
+        fig = ax.figure
+
+    # === Use clade_color_map if provided ===
+    if clade_color_map is not None:
+        colors = [clade_color_map.get(clade, '#cccccc') for clade in clades]  # default to gray if missing
+    else:
+        cmap = plt.get_cmap(colormap)
+        n_colors = len(clades)
+        colors = cmap(np.linspace(0, 1, n_colors))
+
+    ax.stackplot(x, Y, labels=clades, colors=colors)
+    ax.set_title(title,loc='left')
+    ax.set_ylabel('Frequency (%)' if normalize_to_100 else 'Frequency')
+    ax.set_xlabel('Observation date (days)')
+    ax.set_ylim(0, 100 if normalize_to_100 else 1)
+
+    forecasts = [
+        (df_forecast_rm['Date'].min(), df_forecast_rm['Date'].max(), '3m'),
+        (df_forecast1['Date'].min(), df_forecast1['Date'].max(), '6m'),
+        (df_forecast2['Date'].min(), df_forecast2['Date'].max(), '9m'),
+        (df_forecast3['Date'].min(), df_forecast3['Date'].max(), '12m'),
+    ]
+
+    past_end = df_past['Date'].max()
+    ax.axvline(past_end, color='black', linestyle='--', linewidth=1.5, zorder=3,alpha=1.0)
+
+    tick_positions = set(pd.date_range(start=x[0], end=past_end, freq='3M'))
+    forecast_start_dates = []
+
+    for f_start, f_end, label in forecasts:
+        ax.axvline(f_end, color='black', linestyle='--', linewidth=1.0, zorder=3,alpha=0.5)
+        ax.axvspan(f_start, f_end, color='gray', alpha=0.2, zorder=0)
+        ax.text(f_end, ax.get_ylim()[1] + 2, label, ha='center', va='bottom')
+        forecast_start_dates.append(f_start)
+
+    tick_positions.update(forecast_start_dates)
+    tick_positions = sorted(tick_positions)
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels([pd.to_datetime(d).strftime('%Y-%m-%d') for d in tick_positions], rotation=35)
+
+  
+    cumulative_Y = np.cumsum(Y, axis=0)
+    base_Y = np.vstack([np.zeros(cumulative_Y.shape[1]), cumulative_Y[:-1]])
+
+    def get_contrast_color(rgb_color):
+        if isinstance(rgb_color, str):
+            rgb_color = plt.colors.to_rgb(rgb_color)
+        r, g, b = rgb_color[:3]
+        luminance = 0.299 * r + 0.587 * g + 0.114 * b
+        return 'black' if luminance > 0.6 else 'white'
+
+    for idx, clade in enumerate(clades):
+        y_vals = Y[idx]
+        clade_color = colors[idx]
+        text_color = get_contrast_color(clade_color)
+        fit_font = {'color': text_color}
+
+        if np.max(y_vals) >= (label_threshold * 100 if normalize_to_100 else label_threshold):
+            max_idx = np.argmax(y_vals)
+            shift = 5 if max_idx > len(x) - 6 else 0
+            label_idx = max(0, max_idx - shift)
+
+            date = x[label_idx] 
+            y_base = base_Y[idx, label_idx]
+            y_top = cumulative_Y[idx, label_idx]
+            y_middle = y_base + (y_top - y_base) / 2
+
+            fitness_val = fitness_pivot.loc[x[label_idx], clade]
+            fitness_label = f"{fitness_val:.2f}" if fitness_val != 0 else "h: NA"
+
+            if clade == '3C':
+                date_shifted = date + pd.Timedelta(days=50)
+                y_middle -= 3
+            else:
+                date_shifted = date - pd.Timedelta(days=20)
+
+            ax.text(date_shifted - pd.Timedelta(days=7), y_middle - 2.5, fitness_label, ha='center', va='bottom', fontsize=7,**fit_font)
+
+    #plt.tight_layout()
+    ax.set_xlim(x[0], x[-1])
+    return fig, ax
+
 
