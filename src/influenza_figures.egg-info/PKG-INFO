@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: influenza-figures
+Version: 0.1.0
+Summary: Reproducible figure preparation for the influenza prediction project
+Requires-Python: >=3.12
+License-File: LICENSE-CC0
+License-File: LICENSE-GPL
+Requires-Dist: numpy>=2.0
+Requires-Dist: scipy>=1.14
+Requires-Dist: pandas>=2.2
+Requires-Dist: scikit-learn>=1.5
+Requires-Dist: matplotlib>=3.9
+Requires-Dist: Pillow>=10
+Requires-Dist: seaborn>=0.13
+Provides-Extra: notebook
+Requires-Dist: jupyterlab>=4; extra == "notebook"
+Requires-Dist: ipykernel>=6; extra == "notebook"
+Requires-Dist: nbformat>=5; extra == "notebook"
+Requires-Dist: nbclient>=0.10; extra == "notebook"
+Provides-Extra: structure
+Requires-Dist: gemmi>=0.6; extra == "structure"
+Requires-Dist: freesasa>=2.2; extra == "structure"
+Dynamic: license-file

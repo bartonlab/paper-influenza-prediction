@@ -1,0 +1,11 @@
+method_id,model_family,display_label,linkage_policy,rare_mutation_policy,definition_status,notes
+lower_bound,bound,Lower bound,not_applicable,not_applicable,confirmed,Lower bound on EMD.
+null,null,Null model,not_applicable,not_applicable,confirmed,Neutral/null forecast comparator.
+full_model_raw,full_model,Full model,linked,included,confirmed,Unfiltered full-model result (FM in the FullModel family).
+full_model_unlinked,full_model,"Full model, unlinked",unlinked,included,confirmed,Full-model diagnostic with sites treated as unlinked.
+full_model_rare_filtered,full_model,Full model (baseline),linked,removed,confirmed,Rare-mutation-filtered full model before cross-validation selection; GenModel in legacy Results files and GenModel (baseline) in the corrected cross-validation releases.
+full_model_cross_validated_rare_filtered,full_model,Full model (cross-validated),linked,removed,confirmed,Rare-mutation-filtered full model with hyperparameters selected by cross-validation; best GenModel in the corrected releases.
+single_locus_model_rare_filtered,single_locus_model,Single-locus model (SLM),single_locus,removed,confirmed,SLM in the Results and AllModels families.
+multinomial_logistic_regression_rare_filtered,multinomial_logistic_regression,Multinomial logistic regression (MLR),not_documented,removed,confirmed,MLR or MLR_remove_rare_mut; rare mutations are filtered.
+full_model_single_site_simulation,full_model,Full model / single-site simulation (FMSS),not_documented,not_documented,confirmed_legacy_diagnostic,Legacy diagnostic: full model evaluated with single-site simulation.
+single_locus_full_sites_simulation,single_locus_model,Single-locus model / full-sites simulation (SLFS),not_documented,not_documented,confirmed_legacy_diagnostic,Legacy diagnostic: single-locus model evaluated with full-sites simulation.

@@ -1,0 +1,6010 @@
+{
+  "manifest_version": 1,
+  "format_note": "This file uses the JSON subset of YAML 1.2 so it can be validated with the Python standard library.",
+  "scope": {
+    "driver_notebook": "figures.ipynb",
+    "notebook_cell_provenance": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+    "cell_numbering": "zero_based_in_archived_original",
+    "audit_date": "2026-08-26",
+    "policy": "Canonical manifest: active and candidate figures consume only data/plotting inputs or canonical derived products. Notebook-era paths, producer cells, collisions, and outputs remain recorded as immutable archive provenance.",
+    "excluded_nonfigure_cells": [
+      4,
+      14,
+      15,
+      33,
+      34,
+      35,
+      43,
+      44,
+      46,
+      47,
+      67,
+      68,
+      69
+    ],
+    "canonical_data_root": "data/plotting",
+    "canonical_output_root": "figures",
+    "archive_snapshot": "archive/pre_plot_reorg_2026-08-26/original"
+  },
+  "vocabularies": {
+    "activity_status": [
+      "active",
+      "candidate",
+      "legacy",
+      "blocker"
+    ],
+    "run_state": [
+      "verified_clean",
+      "runnable_unverified",
+      "stale_output",
+      "not_run",
+      "partial_failure",
+      "blocked_missing_input",
+      "blocked_schema",
+      "invalid_source"
+    ],
+    "migration_state": [
+      "canonical",
+      "candidate",
+      "consolidate",
+      "superseded",
+      "legacy_keep",
+      "archive",
+      "needs_decision"
+    ],
+    "purpose": [
+      "paper_main",
+      "paper_supplement",
+      "slides",
+      "grant",
+      "poster",
+      "diagnostic",
+      "preprocessing"
+    ],
+    "availability_status": [
+      "present",
+      "archived",
+      "missing"
+    ]
+  },
+  "style_profiles": {
+    "paper_v1": {
+      "status": "canonical",
+      "source": "src/influenza_figures/styles.py:PAPER_V1",
+      "font_families": [
+        "Helvetica",
+        "Arial",
+        "DejaVu Sans"
+      ],
+      "font_sizes_pt": {
+        "panel_label": 10.0,
+        "axis_label": 8.0,
+        "tick_label": 8.0,
+        "annotation": 8.0
+      },
+      "line_width_pt": 0.6,
+      "small_dot_area_pt2": 6.0,
+      "output": {
+        "format": "pdf",
+        "dpi": 1000,
+        "transparent": true,
+        "pdf_fonttype": 3
+      },
+      "note": "Commented paper constants in figures.py and mplot.py."
+    },
+    "slides_v1": {
+      "status": "canonical",
+      "source": "src/influenza_figures/styles.py:SLIDES_V1",
+      "font_families": [
+        "Avenir",
+        "Arial",
+        "DejaVu Sans"
+      ],
+      "font_sizes_pt": {
+        "panel_label": 18.0,
+        "axis_label": 18.0,
+        "tick_label": 18.0,
+        "annotation": 18.0
+      },
+      "line_width_pt": 1.5,
+      "small_dot_area_pt2": 42.0,
+      "output": {
+        "format": "pdf",
+        "dpi": 1000,
+        "transparent": true,
+        "pdf_fonttype": 3
+      },
+      "note": "Commented slide constants in figures.py and mplot.py."
+    },
+    "poster_v1": {
+      "status": "canonical",
+      "source": "src/influenza_figures/styles.py:POSTER_V1",
+      "font_families": [
+        "Avenir",
+        "Arial",
+        "DejaVu Sans"
+      ],
+      "font_sizes_pt": {
+        "panel_label": 24.0,
+        "axis_label": 24.0,
+        "tick_label": 24.0,
+        "annotation": 24.0
+      },
+      "line_width_pt": 1.5,
+      "small_dot_area_pt2": 42.0,
+      "output": {
+        "format": "pdf",
+        "dpi": 1000,
+        "transparent": true,
+        "pdf_fonttype": 3
+      },
+      "note": "Poster constants in figures.py and mplot.py."
+    },
+    "grant_v1": {
+      "status": "canonical",
+      "source": "src/influenza_figures/styles.py:GRANT_V1",
+      "font_families": [
+        "Arial",
+        "Helvetica",
+        "DejaVu Sans"
+      ],
+      "font_sizes_pt": {
+        "panel_label": 12.0,
+        "axis_label": 8.0,
+        "tick_label": 8.0,
+        "annotation": 8.0
+      },
+      "line_width_pt": 0.6,
+      "small_dot_area_pt2": 7.8,
+      "output": {
+        "format": "pdf",
+        "dpi": 1000,
+        "transparent": true,
+        "pdf_fonttype": 3
+      },
+      "note": "Commented grant constants in figures.py and mplot.py."
+    },
+    "legacy_current_v1": {
+      "status": "parity_only",
+      "source": "src/influenza_figures/styles.py:LEGACY_CURRENT_V1",
+      "font_families": [
+        "Avenir",
+        "Arial",
+        "DejaVu Sans"
+      ],
+      "font_sizes_pt": {
+        "panel_label": 24.0,
+        "axis_label": 24.0,
+        "tick_label": 24.0,
+        "annotation": 24.0
+      },
+      "line_width_pt": 1.5,
+      "small_dot_area_pt2": 42.0,
+      "output": {
+        "format": "pdf",
+        "dpi": 1000,
+        "transparent": true,
+        "pdf_fonttype": 3
+      },
+      "note": "Exact mixed figures.py/mplot.py constants active during the 2026-08-26 audit."
+    }
+  },
+  "canvas_profiles": {
+    "model_overview_artwork": {
+      "width_in": 3.472222,
+      "height_in": 2.694444,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:model_overview_artwork"
+    },
+    "overview_strip": {
+      "width_in": 1.6,
+      "height_in": 0.7,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:overview_strip"
+    },
+    "slide_overview_fixloss": {
+      "width_in": 10.5,
+      "height_in": 3.15,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_overview_fixloss"
+    },
+    "double_half": {
+      "width_in": 7.244094,
+      "height_in": 3.622047,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_half"
+    },
+    "double_two_thirds": {
+      "width_in": 7.244094,
+      "height_in": 4.829396,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_two_thirds"
+    },
+    "double_over_1_8": {
+      "width_in": 7.244094,
+      "height_in": 4.024497,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_over_1_8"
+    },
+    "single_over_1_5": {
+      "width_in": 3.464567,
+      "height_in": 2.309711,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:single_over_1_5"
+    },
+    "double_over_1_9": {
+      "width_in": 7.244094,
+      "height_in": 3.812681,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_over_1_9"
+    },
+    "double_over_2_2": {
+      "width_in": 7.244094,
+      "height_in": 3.29277,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_over_2_2"
+    },
+    "double_over_1_6": {
+      "width_in": 7.244094,
+      "height_in": 4.527559,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_over_1_6"
+    },
+    "one_five_over_1_6": {
+      "width_in": 4.76378,
+      "height_in": 2.977362,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:one_five_over_1_6"
+    },
+    "one_five_square": {
+      "width_in": 4.76378,
+      "height_in": 4.76378,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:one_five_square"
+    },
+    "double_over_2_8": {
+      "width_in": 7.244094,
+      "height_in": 2.587177,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:double_over_2_8"
+    },
+    "single_square": {
+      "width_in": 3.464567,
+      "height_in": 3.464567,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:single_square"
+    },
+    "single_tall_1_5": {
+      "width_in": 3.464567,
+      "height_in": 5.19685,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:single_tall_1_5"
+    },
+    "single_tall_1_2": {
+      "width_in": 3.464567,
+      "height_in": 4.15748,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:single_tall_1_2"
+    },
+    "one_five_over_1_4": {
+      "width_in": 4.76378,
+      "height_in": 3.4027,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:one_five_over_1_4"
+    },
+    "slide_distribution": {
+      "width_in": 5.0,
+      "height_in": 3.0,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_distribution"
+    },
+    "grant_auc": {
+      "width_in": 3.35,
+      "height_in": 2.01,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:grant_auc"
+    },
+    "grant_overview": {
+      "width_in": 3.35,
+      "height_in": 4.02,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:grant_overview"
+    },
+    "slide_wide_short": {
+      "width_in": 10.5,
+      "height_in": 4.2,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_wide_short"
+    },
+    "slide_overview_true": {
+      "width_in": 3.0,
+      "height_in": 2.0,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_overview_true"
+    },
+    "slide_overview_sim": {
+      "width_in": 4.2,
+      "height_in": 2.0,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_overview_sim"
+    },
+    "slide_overview_combined": {
+      "width_in": 10.5,
+      "height_in": 3.0,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_overview_combined"
+    },
+    "slide_frequency": {
+      "width_in": 8.5,
+      "height_in": 1.6,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_frequency"
+    },
+    "slide_selection": {
+      "width_in": 3.4,
+      "height_in": 1.6,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_selection"
+    },
+    "slide_selection_subset": {
+      "width_in": 5.25,
+      "height_in": 3.244678,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_selection_subset"
+    },
+    "slide_example_frequency": {
+      "width_in": 10.5,
+      "height_in": 3.5,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_example_frequency"
+    },
+    "slide_auc": {
+      "width_in": 2.625,
+      "height_in": 5.25,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_auc"
+    },
+    "slide_pfix": {
+      "width_in": 5.25,
+      "height_in": 5.25,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_pfix"
+    },
+    "slide_emd": {
+      "width_in": 10.5,
+      "height_in": 5.833333,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_emd"
+    },
+    "slide_emd_joint": {
+      "width_in": 10.5,
+      "height_in": 5.25,
+      "dpi": 1000,
+      "format": "pdf",
+      "source_registry": "src/influenza_figures/registry.py:slide_emd_joint"
+    },
+    "legacy_matplotlib_default": {
+      "width_in": 6.4,
+      "height_in": 4.8,
+      "dpi": 100,
+      "format": "pdf",
+      "source_registry": null,
+      "note": "Unregistered notebook diagnostic canvas retained for provenance only."
+    }
+  },
+  "method_semantics": {
+    "full-model": {
+      "lifecycle": "candidate",
+      "selection_filter": "mixed_by_source",
+      "note": "Raw FM and rare-filtered FM_remove_rare_mut remain distinct."
+    },
+    "genmodel": {
+      "lifecycle": "candidate",
+      "selection_filter": "rare_filtered",
+      "source_family": "Pre-cross-validation Results comparison grids and GenModel (baseline) in the definitive corrected 6-, 9-, and 12-month cross-validation releases",
+      "note": "Retained as the baseline full-model method for explicit comparison."
+    },
+    "best-genmodel": {
+      "lifecycle": "active",
+      "selection_filter": "rare_filtered",
+      "hyperparameter_policy": "selected_by_cross_validation",
+      "source_family": "Definitive corrected 6-, 9-, and 12-month hyperparameter-selection summaries",
+      "note": "The primary full-model target for all maintained 6-, 9-, and 12-month paper figures."
+    },
+    "slm": {
+      "lifecycle": "candidate_diagnostic",
+      "selection_filter": "rare_filtered",
+      "source_family": "Results_EMD and AllModels"
+    },
+    "mlr": {
+      "lifecycle": "candidate",
+      "selection_filter": "rare_filtered",
+      "source_family": "Results_EMD; maps separately from MLR_remove_rare_mut on the full grid",
+      "note": "MLR means multinomial logistic regression."
+    },
+    "fmss": {
+      "lifecycle": "legacy_diagnostic",
+      "selection_filter": "rare_filtered",
+      "note": "Do not promote to an active paper method without an explicit scientific decision."
+    },
+    "slfs": {
+      "lifecycle": "legacy_diagnostic",
+      "selection_filter": "rare_filtered",
+      "note": "Do not promote to an active paper method without an explicit scientific decision."
+    }
+  },
+  "input_sets": {
+    "frequency.four-proteins": {
+      "owner": "upstream.frequency-analysis",
+      "schema": "allele_frequency_matrix_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/frequencies/h3n2_ha_allele_frequencies.txt",
+            "data/plotting/inputs/frequencies/h3n2_na_allele_frequencies.txt",
+            "data/plotting/inputs/frequencies/h1n1_ha_allele_frequencies.txt",
+            "data/plotting/inputs/frequencies/h1n1_na_allele_frequencies.txt"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/allele_frequency_H3N2_HA_2009_to_2020_aa_ts_60_filt.txt",
+          "data/allele_frequency_H3N2_NA_2009_to_2020_aa_ts_60_filt.txt",
+          "data/allele_frequency_H1N1_HA_2009_to_2020_aa_ts_60_filt.txt",
+          "data/allele_frequency_H1N1_NA_2009_to_2020_aa_ts_60_filt.txt"
+        ]
+      }
+    },
+    "selection.with-counts": {
+      "owner": "upstream.selection-analysis",
+      "schema": "selection_mutations_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/selection/h3n2_ha_mutations.csv",
+            "data/plotting/inputs/selection/h3n2_na_mutations.csv",
+            "data/plotting/inputs/selection/h1n1_ha_mutations.csv",
+            "data/plotting/inputs/selection/h1n1_na_mutations.csv"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/selection_coeff_H3N2_HA_since_01_2009_to_03_2020_filt_observed_add_counts.csv",
+          "data/selection_coeff_H3N2_NA_since_01_2009_to_03_2020_filt_observed_add_counts.csv",
+          "data/selection_coeff_H1N1_HA_since_01_2009_to_03_2020_filt_observed_add_counts.csv",
+          "data/selection_coeff_H1N1_NA_since_01_2009_to_03_2020_filt_observed_add_counts.csv"
+        ]
+      },
+      "note": "MutationFrequency is canonically named mutation_count."
+    },
+    "selection.nested-legacy": {
+      "owner": "legacy.selection-analysis",
+      "schema": "selection-mutation-without-count-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/data/H3N2/HA/results/selection_coeff_H3N2_HA_since_01_2009_to_03_2020_filt_observed.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/H3N2/NA/results/selection_coeff_H3N2_NA_since_from_2009_to_2020_filt_observed.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/H1N1/HA/results/selection_coeff_H1N1_HA_since_05_2009_to_03_2020_filt_observed.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/H1N1/NA/results/selection_coeff_H1N1_NA_since_05_2009_to_03_2020_filt_observed.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "notebook_paths": [
+        "data/H3N2/HA/results/selection_coeff_H3N2_HA_since_01_2009_to_03_2020_filt_observed.csv",
+        "data/H3N2/NA/results/selection_coeff_H3N2_NA_since_from_2009_to_2020_filt_observed.csv",
+        "data/H1N1pdm/HA/results/selection_coeff_H1N1_HA_since_05_2009_to_03_2020_filt_observed.csv",
+        "data/H1N1pdm/NA/results/selection_coeff_H1N1_NA_since_05_2009_to_03_2020_filt_observed.csv"
+      ],
+      "note": "The H1N1pdm notebook spelling resolves to the H1N1 archive directory; this projection lacks mutation_count."
+    },
+    "structure.selection-sasa": {
+      "owner": "legacy.structure-preparation",
+      "schema": "position-selection-sasa-smoothed-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/data/structure/sasa_vs_selection_H3.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/structure/sasa_vs_selection_N2.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/structure/sasa_vs_selection_H1.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/structure/sasa_vs_selection_N1.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "note": "Superseded by derived.sasa-selection."
+    },
+    "structure.rendered-images": {
+      "owner": "legacy.structure-rendering",
+      "schema": "structure_asset_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/structure/h3n2_ha_surface.png",
+            "data/plotting/inputs/structure/h1n1_ha_surface.png",
+            "data/plotting/inputs/structure/selection_colorbar.png"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/structure/h3_crop.png",
+          "data/structure/h1_crop.png",
+          "data/structure/colorbar_crop.png"
+        ]
+      }
+    },
+    "artwork.model-overview": {
+      "owner": "manuscript.artwork",
+      "schema": "editable_powerpoint_artwork_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/artwork/fig-model-overview.pptx",
+          "sha256": "16c6dd0c3ffbfdc5c1d6b25cc33f967fc9dd1b552b46abbf2b6322281a7fb871",
+          "bytes": 88619
+        }
+      ],
+      "provenance": {
+        "archive_path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-model-single.pptx",
+        "reference_pdf": "archive/manuscript_figures_2026-10-13/original/tmp/fig-1.pdf"
+      },
+      "write_policy": "never",
+      "note": "Main Figure 1 is externally assembled artwork; export the single slide to PDF without resizing."
+    },
+    "selection.smoothed-space-time": {
+      "owner": "legacy.selection-analysis",
+      "schema": "aligned_selection_and_time_series_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/selection/aligned_ha_selection.csv",
+            "data/plotting/inputs/selection/aligned_na_selection.csv",
+            "data/plotting/inputs/selection/h3n2_ha_fitness_change.dat",
+            "data/plotting/inputs/selection/h1n1_ha_fitness_change.dat",
+            "data/plotting/inputs/selection/h3n2_observation_dates.dat",
+            "data/plotting/inputs/selection/h1n1_observation_dates.dat"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/gaussian_smoothed_selection_H3_H1_window_11.csv",
+          "data/gaussian_smoothed_selection_N2_N1_window_11.csv",
+          "data/fitness_change_h3_tw_11.dat",
+          "data/fitness_change_h1_tw_11.dat",
+          "data/dates_H3.dat",
+          "data/dates_H1.dat"
+        ]
+      }
+    },
+    "emd.canonical": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd_normalized_v6",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/emd/evaluations.csv",
+          "sha256": "339c0111b221ae558abb4085af4d166d45ae1a4c86e2c58d79a404717487d14b",
+          "bytes": 252124
+        },
+        {
+          "path": "data/plotting/inputs/emd/values.csv",
+          "sha256": "69d2c3e99f4daeea014fa0a9ee2a6123ebb3b7df50fc2d23c25d084e0a09c1b3",
+          "bytes": 2470291
+        },
+        {
+          "path": "data/plotting/inputs/emd/methods.csv",
+          "sha256": "27bdcb2e64fd3bfb7663a42aec33be76e05eca7126adb3098c39efc2ba5dc7de",
+          "bytes": 1835
+        },
+        {
+          "path": "data/plotting/inputs/emd/sources.csv",
+          "sha256": "8ef452f8b31e3ef119934dfd125dcebd3727a62796ad291bb7c85b0135d27243",
+          "bytes": 29901
+        }
+      ],
+      "verification": {
+        "release": "emd_v6",
+        "evaluations": 2591,
+        "values": 16578,
+        "methods": 10,
+        "sources": 76
+      },
+      "provenance": {
+        "source_inventory": "data/plotting/inputs/emd/sources.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "definitive_cross_validation_archive_root": "archive/emd_cv_2026-10-13/original",
+        "validation_only_corrected_9m_cross_validation_archive_root": "archive/emd_cv_2026-09-30/original",
+        "validation_only_corrected_6_12_cross_validation_archive_root": "archive/emd_cv_2026-10-10/original",
+        "superseded_cross_validation_archive_root": "archive/emd_cv_2026-09-24/original",
+        "legacy_paths": [
+          "data/emd/",
+          "tmp/*_9m_hyperparam_selection_summary.csv",
+          "tmp/*_9m_hyperparam_selection_summary_corrected.csv",
+          "tmp/*_6m_hyperparam_selection_summary_corrected.csv",
+          "tmp/*_12m_hyperparam_selection_summary_corrected.csv"
+        ]
+      },
+      "note": "All active EMD comparisons use the results_grid protocol and best GenModel from the same corrected horizon-specific source row; the same-run baseline remains separately addressable. The October 13 release corrects the lower-bound-to-horizon pairing used during hyperparameter selection, and all 1,164 cross-validation rows now satisfy Lower Bound <= every model EMD, with zero lower-bound inversions. Relative to v5, only best GenModel and its CV parameter changed, together, in 120 source rows. Canonical hashes were verified by a byte-identical rebuild."
+    },
+    "emd.results-9m-cross-validated": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-results-cross-validated-9m-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/emd_cv_2026-09-24/original/tmp/h1_9m_hyperparam_selection_summary.csv",
+            "archive/emd_cv_2026-09-24/original/tmp/n1_9m_hyperparam_selection_summary.csv",
+            "archive/emd_cv_2026-09-24/original/tmp/h3_9m_hyperparam_selection_summary.csv",
+            "archive/emd_cv_2026-09-24/original/tmp/n2_9m_hyperparam_selection_summary.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "note": "Superseded complete 9-month rerun. Its null EMDs were incorrect; the remaining fields match the corrected release exactly. Retained for provenance and supplies no current values."
+    },
+    "emd.results-9m-cross-validated-corrected": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-results-cross-validated-9m-corrected-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/emd_cv_2026-09-30/original/tmp/h1_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-09-30/original/tmp/n1_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-09-30/original/tmp/h3_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-09-30/original/tmp/n2_9m_hyperparam_selection_summary_corrected.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "note": "Superseded corrected 9-month rerun retained as a validation-only predecessor of the complete October 13 release. It supplies no current canonical values."
+    },
+    "emd.results-6m-12m-cross-validated-corrected": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-results-cross-validated-6m-12m-corrected-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/emd_cv_2026-10-10/original/tmp/h1_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/n1_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/h3_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/n2_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/h1_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/n1_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/h3_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-10/original/tmp/n2_12m_hyperparam_selection_summary_corrected.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "source_schemas": {
+        "6m": "emd.results_cv_6m_corrected.v1",
+        "12m": "emd.results_cv_12m_corrected.v1"
+      },
+      "note": "Superseded corrected 6- and 12-month cross-validation summaries retained as validation-only predecessors of the complete October 13 release. They supply no current canonical values."
+    },
+    "emd.results-6m-9m-12m-cross-validated-corrected": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-results-cross-validated-all-horizons-corrected-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/emd_cv_2026-10-13/original/tmp/h1_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n1_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/h3_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n2_6m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/h1_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n1_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/h3_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n2_9m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/h1_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n1_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/h3_12m_hyperparam_selection_summary_corrected.csv",
+            "archive/emd_cv_2026-10-13/original/tmp/n2_12m_hyperparam_selection_summary_corrected.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "source_schemas": {
+        "6m": "emd.results_cv_6m_corrected.v1",
+        "9m": "emd.results_cv_9m_corrected.v1",
+        "12m": "emd.results_cv_12m_corrected.v1"
+      },
+      "note": "Authoritative complete 6-, 9-, and 12-month cross-validation release. Every panel contains 97 results_grid rows and supplies the lower bound, Null, SLM, MLR, GenModel (baseline), best GenModel, and selected hyperparameters from one coherent source row. The corrected hyperparameter selections produce zero lower-bound/model EMD inversions."
+    },
+    "emd.full-plus-mlr": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-full-grid-plus-rare-filtered-mlr-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/emd/EMD_{horizon}_FullModel_{protein}_full_plus_MLR.csv",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "9m",
+              "12m"
+            ],
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "Normalized into emd.canonical."
+    },
+    "emd.results-rare-filtered": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-comparison-grid-results-mixed-schema-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/emd/Results_EMD_{horizon}_{segment}.csv",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "9m",
+              "12m"
+            ],
+            "segment": [
+              "H3",
+              "N2",
+              "H1",
+              "N1"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "GenModel, SLM, and MLR are rare-filtered and retain distinct method IDs in emd.canonical. All pre-cross-validation Results files are now provenance and validation inputs; the corrected cross-validation summaries are authoritative for 6-, 9-, and 12-month results_grid comparisons."
+    },
+    "emd.full-9m": {
+      "owner": "upstream.emd-analysis",
+      "schema": "emd-full-grid-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/emd/EMD_9m_FullModel_{protein}_full.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "Normalized into emd.canonical."
+    },
+    "emd.bare-9m-missing": {
+      "owner": "legacy.emd-analysis",
+      "schema": "emd-legacy-unsuffixed-unknown",
+      "availability": "missing",
+      "storage_zone": "legacy_missing",
+      "artifacts": [
+        {
+          "path_template": "data/emd/EMD_9m_FullModel_{protein}.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "note": "These notebook literals were absent at archive time; the superseding cell uses normalized canonical EMD data."
+    },
+    "clades.old-wide": {
+      "owner": "legacy.clade-analysis",
+      "schema": "clade-forecast-one-file-per-horizon-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/clade_evolution_H3N2_HA_NXT.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/clade_evolution_H3N2_HA_t0_2014-06-01.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/3m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2014-08-31.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/6m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2014-11-29.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/9m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2015-02-27.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/data_figs/Fig_Clades_Evolution/12m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2015-05-28.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "notebook_paths": [
+        "data/data_figs/Fig_Clades_Evolution/clade_evolution_H3N2_HA_NXT.csv",
+        "data/data_figs/Fig_Clades_Evolution/clade_evolution_H3N2_HA_t0_2014-06-01.csv",
+        "data/data_figs/Fig_Clades_Evolution/3m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2014-08-31.csv",
+        "data/data_figs/Fig_Clades_Evolution/6m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2014-11-29.csv",
+        "data/data_figs/Fig_Clades_Evolution/9m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2015-02-27.csv",
+        "data/data_figs/Fig_Clades_Evolution/12m_forecast_clade_config_H3N2_HA_t0_2014-06-01_tf_2015-05-28.csv"
+      ],
+      "note": "Superseded by clades.tidy."
+    },
+    "clades.tidy": {
+      "owner": "upstream.clade-analysis",
+      "schema": "clade_frequency_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/clades/h3n2_ha_frequencies.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/data_figs/Fig_Clades_Evolution/df_observed_full.csv",
+          "data/data_figs/Fig_Clades_Evolution/df_observed_hist.csv",
+          "data/data_figs/Fig_Clades_Evolution/df_forecast.csv"
+        ]
+      }
+    },
+    "fixation.predictions": {
+      "owner": "upstream.fixation-analysis",
+      "schema": "fixation_predictions_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/fixation/predictions.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/fix-loss/df_FullModel_*_w_time.csv",
+          "data/fix-loss/fixation_pred_model_SLM_*_w_date.csv",
+          "data/fix-loss/df_SLM_*_w_time.csv"
+        ]
+      },
+      "note": "Contains full_model/all_time, slm/paper_date_filtered, and slm/extended_all_time source variants."
+    },
+    "fixation.fullmodel-predictions": {
+      "owner": "upstream.fixation-analysis",
+      "schema": "fixation-prediction-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/df_FullModel_{protein}_w_time.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "Canonical rows use model_id=full_model and source_variant=all_time in fixation.predictions."
+    },
+    "fixation.single-site-predictions": {
+      "owner": "upstream.fixation-analysis",
+      "schema": "fixation-prediction-single-site-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/fixation_pred_model_SLM_{segment}_w_date.csv",
+          "dimensions": {
+            "segment": [
+              "H3",
+              "N2",
+              "H1",
+              "N1"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "Authoritative lineage for df_SS_AUC_* and paper.single-site-auc; canonical source_variant=paper_date_filtered."
+    },
+    "fixation.slm-extended-predictions": {
+      "owner": "upstream.fixation-analysis",
+      "schema": "fixation-prediction-slm-extended-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/df_SLM_{protein}_w_time.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "Distinct from fixation.single-site-predictions; canonical source_variant=extended_all_time."
+    },
+    "fixation.method-diagnostics-legacy": {
+      "owner": "legacy.fixation-analysis",
+      "schema": "fixation-method-diagnostic-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/2025-02-fix-loss/df_{method}_{protein}.csv",
+          "dimensions": {
+            "method": [
+              "FullModel",
+              "SLM",
+              "FMSS",
+              "SLFS"
+            ],
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "write_policy": "never",
+      "note": "FMSS and SLFS remain archive-only diagnostics."
+    },
+    "background.population-fitness": {
+      "owner": "upstream.background-fitness-analysis",
+      "schema": "background_fitness_v2",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/background/population_fitness.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/background/df_fitness_diff_*_background_with_w_pop_fitness.csv"
+        ]
+      },
+      "note": "Observation-level background_fitness_v2 input. For figures with a duration cutoff, preparation filters source rows first and then selects the earliest eligible start_time record for each subtype/segment/position/state mutation identity; selection_coefficient and initial_population_fitness are explicit fields."
+    },
+    "background.delta-h": {
+      "owner": "upstream.background-fitness-analysis",
+      "schema": "background_fitness_v2",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/background/full.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/background/df_fitness_diff_*_background_full.csv"
+        ]
+      },
+      "note": "Observation-level background_fitness_v2 input. H0/H1/dH map to the shared background-fitness fields; row membership remains distinct from the population-fitness variant."
+    },
+    "selection.h3-h1-alignment": {
+      "owner": "legacy.selection-analysis",
+      "schema": "aligned_selection_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/selection/aligned_ha_summary.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "selection_coeff_align_pos_H3-H1.csv"
+        ]
+      }
+    },
+    "auc.2015": {
+      "owner": "legacy.fixation-analysis",
+      "schema": "auc-frequency-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_S1/AUC_vs_f_T0_2015_H3N2_HA.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_S1/AUC_vs_f_T0_2015_H1N1pdm_HA.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_5/AUC_vs_f_T0_2015_H3N2_NA.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_5/AUC_vs_f_T0_2015_H1N1pdm_NA.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "note": "Superseded by derived.presentation-auc-2015."
+    },
+    "pfix.2015-ha": {
+      "owner": "legacy.fixation-analysis",
+      "schema": "fixation-probability-frequency-v1",
+      "availability": "archived",
+      "storage_zone": "archive",
+      "artifacts": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_S2/Fix_prob_vs_f_T0_2015_H3N2_HA.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/data/Fig_S2/Fix_prob_vs_f_T0_2015_H1N1pdm_HA.csv"
+          ]
+        }
+      ],
+      "write_policy": "never",
+      "note": "Superseded by derived.presentation-fixation-probability-2015."
+    },
+    "surveillance.sequence-counts": {
+      "owner": "external.surveillance-summary",
+      "schema": "surveillance_counts_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "path": "data/plotting/inputs/surveillance/sequences_by_year.csv"
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/CumulativeNoOfSequencesByYear.csv"
+        ]
+      }
+    },
+    "example.toy-frequency": {
+      "owner": "legacy.simulation-example",
+      "schema": "toy_model_example_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/examples/toy_model_frequencies.txt",
+            "data/plotting/inputs/examples/toy_model_initial_fitness.txt",
+            "data/plotting/inputs/examples/toy_model_final_fitness.txt"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/example/"
+        ]
+      }
+    },
+    "fixloss.examples": {
+      "owner": "legacy.fixation-examples",
+      "schema": "fix_loss_example_bundle_v1",
+      "availability": "present",
+      "storage_zone": "canonical",
+      "artifacts": [
+        {
+          "paths": [
+            "data/plotting/inputs/examples/fix_loss_example_1.zip",
+            "data/plotting/inputs/examples/fix_loss_example_2.zip"
+          ]
+        }
+      ],
+      "provenance": {
+        "migration_map": "data/plotting/migration_map.csv",
+        "archive_root": "archive/pre_plot_reorg_2026-08-26/original",
+        "legacy_paths": [
+          "data/Fix-loss_example_1/",
+          "data/Fix-loss_example_2/"
+        ]
+      },
+      "note": "Each deterministic zip contains 2,007 indexed files."
+    }
+  },
+  "data_products": [
+    {
+      "product_id": "derived.fixation-auc",
+      "activity_status": "active",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.fixation-metrics",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_fixation",
+        "notebook_cells": []
+      },
+      "inputs": [
+        "fixation.predictions"
+      ],
+      "source_variants": {
+        "full_model/all_time": "df_FullModel_AUC_{protein}_{cutoff}.csv",
+        "slm/paper_date_filtered": "df_SS_AUC_{segment}_1095.csv from fixation_pred_model_SLM_{segment}_w_date.csv",
+        "slm/extended_all_time": "df_SLM_AUC_{protein}_1095.csv from df_SLM_{protein}_w_time.csv"
+      },
+      "outputs": [
+        {
+          "path": "data/plotting/derived/fixation_metrics/auc.csv",
+          "owner": "derived.fixation-auc",
+          "schema": "fixation_auc_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.fixation-probability",
+      "activity_status": "active",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.fixation-metrics",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_fixation",
+        "notebook_cells": []
+      },
+      "inputs": [
+        "fixation.predictions"
+      ],
+      "outputs": [
+        {
+          "path": "data/plotting/derived/fixation_metrics/fixation_probability.csv",
+          "owner": "derived.fixation-probability",
+          "schema": "fixation_probability_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.presentation-auc-2015",
+      "activity_status": "active",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.presentation-metrics",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_presentation_metrics",
+        "notebook_cells": []
+      },
+      "inputs": [
+        "auc.2015"
+      ],
+      "outputs": [
+        {
+          "path": "data/plotting/derived/fixation_metrics/auc_2015.csv",
+          "owner": "derived.presentation-auc-2015",
+          "schema": "presentation_auc_2015_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.presentation-fixation-probability-2015",
+      "activity_status": "candidate",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.presentation-metrics",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_presentation_metrics",
+        "notebook_cells": []
+      },
+      "inputs": [
+        "pfix.2015-ha"
+      ],
+      "outputs": [
+        {
+          "path": "data/plotting/derived/fixation_metrics/fixation_probability_2015.csv",
+          "owner": "derived.presentation-fixation-probability-2015",
+          "schema": "presentation_fixation_probability_2015_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.overview-trajectories",
+      "activity_status": "active",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.overview",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_overview",
+        "notebook_cells": [
+          39,
+          40
+        ]
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "path": "data/plotting/derived/overview/trajectories.csv",
+          "owner": "derived.overview-trajectories",
+          "schema": "overview_trajectories_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.sasa-selection",
+      "activity_status": "active",
+      "availability": "present",
+      "migration_state": "canonical",
+      "owner": "prepare.structure",
+      "producer": {
+        "entrypoint": "scripts.migrate_plotting_data.migrate_structure",
+        "notebook_cells": [
+          33,
+          34
+        ]
+      },
+      "inputs": [
+        "selection.with-counts"
+      ],
+      "outputs": [
+        {
+          "path": "data/plotting/derived/structure/sasa_selection.csv",
+          "owner": "derived.sasa-selection",
+          "schema": "sasa_selection_v1"
+        }
+      ]
+    },
+    {
+      "product_id": "derived.fullmodel-auc-1095",
+      "activity_status": "legacy",
+      "owner": "prepare.fixation-auc",
+      "producer": {
+        "entrypoint": "figures.compute_AUC_slides",
+        "notebook_cells": [
+          23,
+          28,
+          59,
+          60
+        ],
+        "canonical_cell": 28
+      },
+      "inputs": [
+        "fixation.fullmodel-predictions"
+      ],
+      "outputs": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/df_FullModel_AUC_{protein}_1095.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          },
+          "owner": "derived.fullmodel-auc-1095",
+          "archived_reference": true
+        }
+      ],
+      "availability": "archived",
+      "migration_state": "superseded",
+      "canonical_product": "derived.fixation-auc",
+      "write_policy": "never"
+    },
+    {
+      "product_id": "derived.fullmodel-pfix-1095",
+      "activity_status": "legacy",
+      "owner": "prepare.fixation-probability",
+      "producer": {
+        "entrypoint": "figures.compute_pfix_slides",
+        "notebook_cells": [
+          22,
+          23,
+          61
+        ],
+        "canonical_cell": 22
+      },
+      "inputs": [
+        "fixation.fullmodel-predictions"
+      ],
+      "outputs": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/df_FullModel_pfix_{protein}_1095.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          },
+          "owner": "derived.fullmodel-pfix-1095",
+          "archived_reference": true
+        }
+      ],
+      "availability": "archived",
+      "migration_state": "superseded",
+      "canonical_product": "derived.fixation-probability",
+      "write_policy": "never"
+    },
+    {
+      "product_id": "derived.single-site-auc-1095",
+      "activity_status": "legacy",
+      "owner": "prepare.fixation-auc-single-site",
+      "producer": {
+        "entrypoint": "figures.compute_AUC_slides",
+        "notebook_cells": [
+          29
+        ],
+        "canonical_cell": 29
+      },
+      "inputs": [
+        "fixation.single-site-predictions"
+      ],
+      "outputs": [
+        {
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/data/fix-loss/df_SS_AUC_{segment}_1095.csv",
+          "dimensions": {
+            "segment": [
+              "H3",
+              "N2",
+              "H1",
+              "N1"
+            ]
+          },
+          "owner": "derived.single-site-auc-1095",
+          "archived_reference": true
+        }
+      ],
+      "availability": "archived",
+      "migration_state": "superseded",
+      "canonical_product": "derived.fixation-auc",
+      "write_policy": "never",
+      "lineage_note": "df_SS_AUC_{H3,N2,H1,N1}_1095.csv is derived from fixation_pred_model_SLM_{H3,N2,H1,N1}_w_date.csv, not from df_SLM_*_w_time.csv."
+    },
+    {
+      "product_id": "derived.overview-true-sim",
+      "activity_status": "legacy",
+      "owner": "prepare.overview-simulation",
+      "producer": {
+        "entrypoint": "figures.generate_overview_data",
+        "notebook_cells": [
+          39
+        ],
+        "canonical_cell": 39
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "paths": [
+            "archive/pre_plot_reorg_2026-08-26/original/figures/overview-frequencies-true.csv",
+            "archive/pre_plot_reorg_2026-08-26/original/figures/overview-frequencies-sim.csv"
+          ],
+          "owner": "derived.overview-true-sim",
+          "archived_reference": true
+        }
+      ],
+      "availability": "archived",
+      "migration_state": "superseded",
+      "canonical_product": "derived.overview-trajectories",
+      "write_policy": "never"
+    },
+    {
+      "product_id": "derived.overview-fixloss",
+      "activity_status": "legacy",
+      "owner": "prepare.overview-fixloss",
+      "producer": {
+        "entrypoint": "figures.generate_overview_data_fixloss",
+        "notebook_cells": [
+          40
+        ],
+        "canonical_cell": 40
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/overview-frequencies-fixloss.csv",
+          "owner": "derived.overview-fixloss",
+          "archived_reference": true
+        }
+      ],
+      "availability": "archived",
+      "migration_state": "superseded",
+      "canonical_product": "derived.overview-trajectories",
+      "write_policy": "never"
+    }
+  ],
+  "figures": [
+    {
+      "figure_id": "paper.model-overview",
+      "title": "Sequence-structured forecasting framework",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Figure 1"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          8
+        ],
+        "note": "The archived Figure 1 heading is a provenance anchor only. The final composition is editable artwork, not a notebook-generated data plot."
+      },
+      "implementation": {
+        "entrypoint": "manual single-slide PowerPoint export documented in figures.ipynb",
+        "generation_mode": "editable_artwork_manual_export",
+        "source_path": "data/plotting/inputs/artwork/fig-model-overview.pptx",
+        "registry_keys": [
+          "paper.model_overview"
+        ],
+        "note": "Use Microsoft PowerPoint or another renderer verified to preserve the trajectory artwork. This is the only final manuscript figure without a data-driven Python renderer."
+      },
+      "inputs": [
+        {
+          "input_set": "artwork.model-overview",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "export_single_slide_to_pdf",
+          "preserve_canvas": true,
+          "source_size_inches": [
+            3.472222,
+            2.694444
+          ]
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "model_overview_artwork"
+      },
+      "outputs": [
+        {
+          "owner": "paper.model-overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-model-single.pdf"
+          },
+          "path": "figures/paper/fig-model-overview.pdf",
+          "migration_target": "figures/paper/fig-model-overview.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "manual_powerpoint_export_v1",
+              "path": "figures/paper/fig-model-overview.pdf",
+              "sha256": "c81a10703b1c9a770ff27e2b692588b0a980baca7e37873878f1c8b9a31b7011",
+              "bytes": 85695,
+              "pages": 1,
+              "page_size_pt": [
+                250.0,
+                194.0
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13",
+              "source": "data/plotting/inputs/artwork/fig-model-overview.pptx",
+              "verification_basis": "supplied final PDF and editable artwork source"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "manual_powerpoint_export_v1"
+    },
+    {
+      "figure_id": "legacy.paper.frequency-selection-structure",
+      "title": "Combined frequency, selection, and structure figure",
+      "purpose": "paper_main",
+      "activity_status": "legacy",
+      "run_state": "stale_output",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          9
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_frequency_selection_structure",
+        "source_line": 1063,
+        "registry_keys": [
+          "paper.frequency_selection_structure"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "frequency.four-proteins",
+          "use": "rendered"
+        },
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        },
+        {
+          "input_set": "structure.rendered-images",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        },
+        {
+          "operation": "h1_time_shift_days",
+          "value": 120
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "double_two_thirds"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.paper.frequency-selection-structure",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-frequency-selection-structure.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-frequency-selection-structure.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Cell is explicitly marked OLD; manuscript ownership is unconfirmed."
+      ]
+    },
+    {
+      "figure_id": "paper.frequency-selection",
+      "title": "Mutation frequency and inferred selection",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Supplementary Figure S5"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          10
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_frequency_selection",
+        "source_path": "src/influenza_figures/selection_plot.py",
+        "renderer_entrypoint": "influenza_figures.selection_plot.render_frequency_selection_figure",
+        "legacy_entrypoint": "figures.legacy.plot_frequency_selection",
+        "legacy_source_line": 1356,
+        "registry_keys": [
+          "paper.frequency_selection"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "frequency.four-proteins",
+          "use": "rendered"
+        },
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        },
+        {
+          "operation": "h1_time_shift_days",
+          "value": 120
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_1_8"
+      },
+      "outputs": [
+        {
+          "owner": "paper.frequency-selection",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-frequency-selection.pdf"
+          },
+          "path": "figures/supplement/fig-frequency-selection.pdf",
+          "migration_target": "figures/supplement/fig-frequency-selection.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-frequency-selection.pdf",
+              "sha256": "758d47c68f484159455c6716db3107987d4b601ed8deef80578db7b3b23aa55c",
+              "bytes": 259204,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                289.764
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "canonical_manuscript_renderer_v1"
+    },
+    {
+      "figure_id": "legacy.paper.selection-structure-space",
+      "title": "Legacy selection and structure-space rendering",
+      "purpose": "paper_main",
+      "activity_status": "legacy",
+      "run_state": "stale_output",
+      "migration_state": "superseded",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          11
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_structure_space",
+        "source_line": 492,
+        "registry_keys": [
+          "paper.selection_structure_space"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        },
+        {
+          "input_set": "structure.selection-sasa",
+          "use": "rendered"
+        },
+        {
+          "input_set": "structure.rendered-images",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "double_half"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.paper.selection-structure-space",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-selection-structure-space.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-selection-structure-space.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Explicitly marked OLD and shares its output with cell 12."
+      ]
+    },
+    {
+      "figure_id": "paper.selection-structure-space",
+      "title": "Selection across sequence and rendered protein structure",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Figure 2"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          12
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_structure_space",
+        "source_path": "src/influenza_figures/selection_plot.py",
+        "renderer_entrypoint": "influenza_figures.selection_plot.render_selection_structure_space_figure",
+        "legacy_entrypoint": "figures.legacy.plot_selection_structure_space",
+        "legacy_source_line": 492,
+        "registry_keys": [
+          "paper.selection_structure_space"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        },
+        {
+          "data_product": "derived.sasa-selection",
+          "use": "rendered"
+        },
+        {
+          "input_set": "structure.rendered-images",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_half"
+      },
+      "display_policy": {
+        "selection_y_axes": {
+          "ha": {
+            "limits": [
+              0.0,
+              0.42
+            ],
+            "outer_tick_and_spine_end": 0.4
+          },
+          "na": {
+            "limits": [
+              0.0,
+              0.26
+            ],
+            "outer_tick_and_spine_end": 0.2
+          }
+        },
+        "ha_domain_annotations": {
+          "span_line_y": 0.39,
+          "label_y": 0.42
+        }
+      },
+      "outputs": [
+        {
+          "owner": "paper.selection-structure-space",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-selection-structure-space.pdf"
+          },
+          "path": "figures/paper/fig-selection-structure-space.pdf",
+          "migration_target": "figures/paper/fig-selection-structure-space.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/paper/fig-selection-structure-space.pdf",
+              "sha256": "584384c973da9c4265eba6b9db0fb9a56d819d43146ce4d1bc80d709394a6b30",
+              "bytes": 987289,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "selection_axis_padding_v2",
+              "path": "figures/paper/fig-selection-structure-space.pdf",
+              "sha256": "fe0780564ce3e70f740d5d8b5b326922b9e8ec0abb49351276e97e74fb79dee0",
+              "bytes": 987138,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            },
+            {
+              "render_revision": "ha_domain_annotation_clearance_v3",
+              "path": "figures/paper/fig-selection-structure-space.pdf",
+              "sha256": "c360d53315fc0b56f07f0f8a19816964cc19c87e814f548174e2cb725baea7e0",
+              "bytes": 987138,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "ha_domain_annotation_clearance_v3"
+    },
+    {
+      "figure_id": "paper.selection-sasa",
+      "title": "Selection and solvent-accessible surface area",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Supplementary Figure S6"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          12
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_sasa",
+        "source_path": "src/influenza_figures/selection_plot.py",
+        "renderer_entrypoint": "influenza_figures.selection_plot.render_selection_sasa_figure",
+        "legacy_entrypoint": "figures.legacy.plot_selection_sasa",
+        "legacy_source_line": 923,
+        "registry_keys": [
+          "paper.selection_sasa"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.sasa-selection",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_half"
+      },
+      "display_policy": {
+        "selection_y_axes": {
+          "ha": {
+            "limits": [
+              0.0,
+              0.42
+            ],
+            "outer_tick_and_spine_end": 0.4
+          },
+          "na": {
+            "limits": [
+              0.0,
+              0.26
+            ],
+            "outer_tick_and_spine_end": 0.2
+          }
+        },
+        "ha_domain_annotations": {
+          "span_line_y": 0.39,
+          "label_y": 0.42
+        },
+        "sasa_y_axis": {
+          "limits": [
+            0.0,
+            100.0
+          ],
+          "outer_tick_and_spine_end": 80.0
+        }
+      },
+      "outputs": [
+        {
+          "owner": "paper.selection-sasa",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-selection-sasa.pdf"
+          },
+          "path": "figures/supplement/fig-selection-sasa.pdf",
+          "migration_target": "figures/supplement/fig-selection-sasa.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-selection-sasa.pdf",
+              "sha256": "839e770a105066354976e4649d2ee47bff745cf4c3b17c5871234f6758fb2452",
+              "bytes": 54864,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "selection_axis_padding_v2",
+              "path": "figures/supplement/fig-selection-sasa.pdf",
+              "sha256": "80ecd35ca07ca3dbb34186d9a26e1694d14077866ce3e8fc49f00335ebccd178",
+              "bytes": 54640,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            },
+            {
+              "render_revision": "ha_domain_annotation_clearance_v3",
+              "path": "figures/supplement/fig-selection-sasa.pdf",
+              "sha256": "0854a66317270f01ed29ecda4970d47fb9fdd2258bfd437fb1a4ba677c9098b3",
+              "bytes": 54641,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                260.787
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "ha_domain_annotation_clearance_v3"
+    },
+    {
+      "figure_id": "legacy.paper.selection-space",
+      "title": "Legacy smoothed selection across protein space",
+      "purpose": "paper_supplement",
+      "activity_status": "legacy",
+      "run_state": "stale_output",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          13
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_space_time",
+        "source_line": 1480,
+        "registry_keys": []
+      },
+      "inputs": [
+        {
+          "input_set": "selection.smoothed-space-time",
+          "use": "analysis_only"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "legacy_duplicate_input_bug",
+          "detail": "Archived OLD cell passes H3 fitness-change data twice. No maintained caller reproduces it; dormant time panels also lack a validated matrix/date alignment."
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "single_over_1_5"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.paper.selection-space",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-selection-space.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-selection-space.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Explicitly marked OLD and archive-only; no maintained output is registered.",
+        "Reactivating the time panels requires resolving matrix/date-vector length and axis alignment, not merely substituting the H1 file."
+      ]
+    },
+    {
+      "figure_id": "slides.emd-vs-mlr",
+      "title": "Six-month full-model versus MLR EMD slides",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          16
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_emd_slides + plot_emd_distribution_slides + plot_emd_joint_slides",
+        "source_lines": [
+          5813,
+          6170,
+          6244
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "select_horizon",
+          "value": "6m"
+        },
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol",
+          "value": "results_grid"
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "comparison",
+          "model": "full_model_rare_filtered",
+          "reference": "multinomial_logistic_regression_rare_filtered"
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profiles": [
+          "slide_emd",
+          "slide_distribution",
+          "slide_emd_joint"
+        ]
+      },
+      "outputs": [
+        {
+          "owner": "slides.emd-vs-mlr",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-vs-mlr-6m-{protein}-1095-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-vs-mlr-6m-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-vs-mlr-6m-{protein}-1095-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-vs-mlr",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-vs-mlr-distribution-6m-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-vs-mlr-distribution-6m-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-vs-mlr-distribution-6m-{protein}-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-vs-mlr",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-vs-mlr-joint-6m-1095-{stage}-slides.pdf",
+            "dimensions": {
+              "stage": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-vs-mlr-joint-6m-1095-{stage}-slides.pdf",
+          "dimensions": {
+            "stage": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-vs-mlr-joint-6m-1095-{stage}-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-vs-mlr",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-emd-vs-mlr-joint-6m-1095-4-alt-slides.pdf"
+          },
+          "path": "figures/slides/fig-emd-vs-mlr-joint-6m-1095-4-alt-slides.pdf",
+          "migration_target": "figures/slides/fig-emd-vs-mlr-joint-6m-1095-4-alt-slides.pdf"
+        }
+      ],
+      "blockers": [
+        "The corrected results_grid/date-cutoff/exact-pair preparation is available, but the legacy multi-output slide renderers still read wide full-grid files and apply strict Obs_Time > t_min filtering. A focused canonical slide wrapper and reference-PDF parity check are required before activation."
+      ]
+    },
+    {
+      "figure_id": "paper.emd-vs-mlr",
+      "title": "Full-model improvement over rare-filtered MLR",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels_by_horizon": {
+        "6": "Supplementary Figure S10",
+        "9": "Supplementary Figure S11",
+        "12": "Supplementary Figure S12"
+      },
+      "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          17
+        ]
+      },
+      "implementation": {
+        "entrypoint": "influenza_figures.emd_plot.render_emd_comparison_figure",
+        "source_path": "src/influenza_figures/emd_plot.py",
+        "legacy_entrypoint": "figures.plot_emd_vs_mlr",
+        "legacy_source_line": 1682,
+        "registry_keys": [
+          "paper.emd_vs_mlr.6m",
+          "paper.emd_vs_mlr.9m",
+          "paper.emd_vs_mlr.12m"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol_by_horizon",
+          "values": {
+            "6": "results_grid",
+            "9": "results_grid",
+            "12": "results_grid"
+          }
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "date_axis_padding",
+          "left_days": 50,
+          "right_days": 50,
+          "tick_dates_unchanged": true
+        },
+        {
+          "operation": "significance_annotation",
+          "test": "paired_t_test",
+          "alpha": 0.05,
+          "delta_definition": "comparator_emd_minus_target_emd",
+          "display_policy": {
+            "p_gt_0_05": "omit",
+            "p_gt_0_01_and_lte_0_05": "exact_two_decimal",
+            "p_lte_0_01": "order_of_magnitude"
+          },
+          "target_worse_marker": {
+            "condition": "p_value <= 0.05 and mean_delta_emd < 0",
+            "marker": "*",
+            "figure_key": "* full model worse"
+          }
+        },
+        {
+          "operation": "comparison",
+          "model_by_horizon": {
+            "6": "full_model_cross_validated_rare_filtered",
+            "9": "full_model_cross_validated_rare_filtered",
+            "12": "full_model_cross_validated_rare_filtered"
+          },
+          "reference": "multinomial_logistic_regression_rare_filtered"
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_1_9"
+      },
+      "outputs": [
+        {
+          "owner": "paper.emd-vs-mlr",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-vs-mlr-{horizon}.pdf",
+            "dimensions": {
+              "horizon": [
+                "6m",
+                "9m",
+                "12m"
+              ]
+            }
+          },
+          "path_template": "figures/supplement/fig-emd-vs-mlr-{horizon}.pdf",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "9m",
+              "12m"
+            ]
+          },
+          "migration_target_template": "figures/supplement/fig-emd-vs-mlr-{horizon}.pdf",
+          "verified_instances": [
+            {
+              "horizon": "6m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-mlr-6m.pdf",
+              "sha256": "426e97d4307d06699d3f995395b98d40b8d91944ce87b43b2f51d6cd25598316",
+              "bytes": 30963,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "horizon": "9m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-mlr-9m.pdf",
+              "sha256": "94a4c251b0ab74a0caed80029b7d8bf46a2254308910ab9da9866075ace1f17f",
+              "bytes": 30936,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "horizon": "12m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-mlr-12m.pdf",
+              "sha256": "9f7abbeb8fc95b1fe2e25f0e478cee5369273574fba4bb6fbfe06bcb04fcf7a2",
+              "bytes": 30942,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "paper.emd-vs-null",
+      "title": "Full-model improvement over the null model",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels_by_horizon": {
+        "6": "Supplementary Figure S8",
+        "9": "Figure 4",
+        "12": "Supplementary Figure S9"
+      },
+      "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          18
+        ]
+      },
+      "implementation": {
+        "entrypoint": "influenza_figures.emd_plot.render_emd_comparison_figure",
+        "source_path": "src/influenza_figures/emd_plot.py",
+        "legacy_entrypoint": "figures.plot_emd",
+        "legacy_source_line": 2008,
+        "registry_keys": [
+          "paper.emd_vs_null.6m",
+          "paper.emd_vs_null.9m",
+          "paper.emd_vs_null.12m"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol_by_horizon",
+          "values": {
+            "6": "results_grid",
+            "9": "results_grid",
+            "12": "results_grid"
+          }
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "date_axis_padding",
+          "left_days": 50,
+          "right_days": 50,
+          "tick_dates_unchanged": true
+        },
+        {
+          "operation": "significance_annotation",
+          "test": "paired_t_test",
+          "alpha": 0.05,
+          "delta_definition": "comparator_emd_minus_target_emd",
+          "display_policy": {
+            "p_gt_0_05": "omit",
+            "p_gt_0_01_and_lte_0_05": "exact_two_decimal",
+            "p_lte_0_01": "order_of_magnitude"
+          },
+          "target_worse_marker": {
+            "condition": "p_value <= 0.05 and mean_delta_emd < 0",
+            "marker": "*",
+            "figure_key": "* full model worse"
+          }
+        },
+        {
+          "operation": "comparison",
+          "model_by_horizon": {
+            "6": "full_model_cross_validated_rare_filtered",
+            "9": "full_model_cross_validated_rare_filtered",
+            "12": "full_model_cross_validated_rare_filtered"
+          },
+          "reference": "null"
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_2_2"
+      },
+      "outputs": [
+        {
+          "owner": "paper.emd-vs-null",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-vs-null-{horizon}.pdf",
+            "dimensions": {
+              "horizon": [
+                "6m",
+                "9m",
+                "12m"
+              ]
+            }
+          },
+          "path": "figures/paper/fig-emd-vs-null-9m.pdf",
+          "migration_target": "figures/paper/fig-emd-vs-null-9m.pdf",
+          "verified_instances": [
+            {
+              "horizon": "9m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/paper/fig-emd-vs-null-9m.pdf",
+              "sha256": "309213a999af577e6ccc34b12953ef6a05f1a6cee6b2ded5a13195d571c660d2",
+              "bytes": 29101,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                237.079
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        },
+        {
+          "owner": "paper.emd-vs-null",
+          "artifact_kind": "rendered_figure",
+          "purpose": "paper_supplement",
+          "path_template": "figures/supplement/fig-emd-vs-null-{horizon}.pdf",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "12m"
+            ]
+          },
+          "migration_target_template": "figures/supplement/fig-emd-vs-null-{horizon}.pdf",
+          "verified_instances": [
+            {
+              "horizon": "6m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-null-6m.pdf",
+              "sha256": "7f703a8974dfbd60dee71614bcff1a6c5039d933d84a24231f0bb71e3375661c",
+              "bytes": 29666,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                237.079
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "horizon": "12m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-null-12m.pdf",
+              "sha256": "b5d6777ace73ecf43b8dc8f9eff40f5860d5c6b21afc844c2e1804516577e504",
+              "bytes": 29660,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                237.079
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "paper.emd-vs-slm",
+      "title": "Full-model improvement over the rare-filtered single-locus model",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels_by_horizon": {
+        "6": "Supplementary Figure S17",
+        "9": "Supplementary Figure S18",
+        "12": "Supplementary Figure S19"
+      },
+      "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          19
+        ]
+      },
+      "implementation": {
+        "entrypoint": "influenza_figures.emd_plot.render_emd_comparison_figure",
+        "source_path": "src/influenza_figures/emd_plot.py",
+        "legacy_entrypoint": "figures.plot_emd_vs_ss",
+        "legacy_source_line": 1841,
+        "registry_keys": [
+          "paper.emd_vs_slm.6m",
+          "paper.emd_vs_slm.9m",
+          "paper.emd_vs_slm.12m"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol_by_horizon",
+          "values": {
+            "6": "results_grid",
+            "9": "results_grid",
+            "12": "results_grid"
+          }
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "date_axis_padding",
+          "left_days": 50,
+          "right_days": 50,
+          "tick_dates_unchanged": true
+        },
+        {
+          "operation": "significance_annotation",
+          "test": "paired_t_test",
+          "alpha": 0.05,
+          "delta_definition": "comparator_emd_minus_target_emd",
+          "display_policy": {
+            "p_gt_0_05": "omit",
+            "p_gt_0_01_and_lte_0_05": "exact_two_decimal",
+            "p_lte_0_01": "order_of_magnitude"
+          },
+          "target_worse_marker": {
+            "condition": "p_value <= 0.05 and mean_delta_emd < 0",
+            "marker": "*",
+            "figure_key": "* full model worse"
+          }
+        },
+        {
+          "operation": "comparison",
+          "model_by_horizon": {
+            "6": "full_model_cross_validated_rare_filtered",
+            "9": "full_model_cross_validated_rare_filtered",
+            "12": "full_model_cross_validated_rare_filtered"
+          },
+          "reference": "single_locus_model_rare_filtered"
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_1_9"
+      },
+      "outputs": [
+        {
+          "owner": "paper.emd-vs-slm",
+          "artifact_kind": "rendered_figure",
+          "path_template": "figures/supplement/fig-emd-vs-slm-{horizon}.pdf",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "9m",
+              "12m"
+            ]
+          },
+          "migration_target_template": "figures/supplement/fig-emd-vs-slm-{horizon}.pdf",
+          "verified_instances": [
+            {
+              "horizon": "6m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-slm-6m.pdf",
+              "sha256": "00cfe3e25b4060b00036f585e263ada22cc9517ea0f274982bb726bd0adb5d6b",
+              "bytes": 31338,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "horizon": "9m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-slm-9m.pdf",
+              "sha256": "1fed958894066cfcb16259ffaa5e546c1ac601cb08183bb21072cef8754548f3",
+              "bytes": 31373,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "horizon": "12m",
+              "release": "emd_v6",
+              "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+              "path": "figures/supplement/fig-emd-vs-slm-12m.pdf",
+              "sha256": "c467b1523c10bd9537346c9b59fc7f3f1f9e1fe23cbaccec37987a2ea08d7a91",
+              "bytes": 31379,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "diagnostic.emd-best-vs-baseline",
+      "title": "Cross-validation-selected full model versus same-run baseline",
+      "purpose": "diagnostic",
+      "activity_status": "active",
+      "run_state": "runnable_unverified",
+      "migration_state": "canonical",
+      "render_revision": "significance_annotation_v2_date_axis_padding_50d",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          17,
+          18,
+          19
+        ],
+        "note": "This diagnostic was introduced with the cross-validation release; archived cells 17-19 establish the EMD comparison layout and conventions rather than containing this exact comparison."
+      },
+      "implementation": {
+        "entrypoint": "influenza_figures.emd_plot.render_emd_comparison_figure",
+        "source_path": "src/influenza_figures/emd_plot.py",
+        "registry_keys": [
+          "diagnostic.emd_best_vs_baseline.6m",
+          "diagnostic.emd_best_vs_baseline.9m",
+          "diagnostic.emd_best_vs_baseline.12m"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol_by_horizon",
+          "values": {
+            "6": "results_grid",
+            "9": "results_grid",
+            "12": "results_grid"
+          }
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "date_axis_padding",
+          "left_days": 50,
+          "right_days": 50,
+          "tick_dates_unchanged": true
+        },
+        {
+          "operation": "significance_annotation",
+          "test": "paired_t_test",
+          "alpha": 0.05,
+          "delta_definition": "comparator_emd_minus_target_emd",
+          "display_policy": {
+            "p_gt_0_05": "omit",
+            "p_gt_0_01_and_lte_0_05": "exact_two_decimal",
+            "p_lte_0_01": "order_of_magnitude"
+          },
+          "target_worse_marker": {
+            "condition": "p_value <= 0.05 and mean_delta_emd < 0",
+            "marker": "*",
+            "figure_key": "* target model worse"
+          }
+        },
+        {
+          "operation": "comparison",
+          "target": "full_model_cross_validated_rare_filtered",
+          "reference": "full_model_rare_filtered",
+          "difference_sign": "reference_minus_target",
+          "interpretation": "Positive values mean the cross-validation-selected best GenModel has lower EMD than the same-run GenModel baseline."
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_1_9"
+      },
+      "outputs": [
+        {
+          "owner": "diagnostic.emd-best-vs-baseline",
+          "artifact_kind": "rendered_figure",
+          "path_template": "figures/diagnostic/fig-emd-best-vs-baseline-{horizon}.pdf",
+          "dimensions": {
+            "horizon": [
+              "6m",
+              "9m",
+              "12m"
+            ]
+          },
+          "migration_target_template": "figures/diagnostic/fig-emd-best-vs-baseline-{horizon}.pdf",
+          "verified_instances": [
+            {
+              "horizon": "6m",
+              "release": "emd_v6",
+              "render_revision": "symmetric_date_axis_padding_50d",
+              "path": "figures/diagnostic/fig-emd-best-vs-baseline-6m.pdf",
+              "sha256": "3b1c54de952954f695214df99dce199ceb93d112098d378861344deab417c9c0",
+              "bytes": 28895,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              }
+            },
+            {
+              "horizon": "9m",
+              "release": "emd_v6",
+              "render_revision": "symmetric_date_axis_padding_50d",
+              "path": "figures/diagnostic/fig-emd-best-vs-baseline-9m.pdf",
+              "sha256": "74b9d0e26999aab59a9c96373bae322ef5d1f8b7cde00e8b4b857ddde32f7c89",
+              "bytes": 28945,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              }
+            },
+            {
+              "horizon": "12m",
+              "release": "emd_v6",
+              "render_revision": "symmetric_date_axis_padding_50d",
+              "path": "figures/diagnostic/fig-emd-best-vs-baseline-12m.pdf",
+              "sha256": "0393ced776cc8d3adf4084e85b6ae1c34d30a6bdd55ef7dffbe09645b95e0ed6",
+              "bytes": 29014,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                274.513
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "legacy.paper.clade-old",
+      "title": "Clade forecast from one-file-per-horizon inputs",
+      "purpose": "paper_main",
+      "activity_status": "legacy",
+      "run_state": "stale_output",
+      "migration_state": "superseded",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          20
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_clade_old",
+        "source_line": 2512,
+        "registry_keys": [
+          "legacy.clade_old"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "clades.old-wide",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "date_window",
+          "start": "2011-08-01",
+          "end": "2015-06-01"
+        },
+        {
+          "operation": "legacy_noop_clade_filter"
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "one_five_over_1_6"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.paper.clade-old",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-clade.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-clade.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Historical loop-local dataframe rebinding discarded the intended clade filter; this producer is archive-only and is not corrected in place.",
+        "Shares output with the tidy-data candidate and was executed later in the saved kernel."
+      ]
+    },
+    {
+      "figure_id": "paper.clade",
+      "title": "Observed and forecast H3N2 HA clade frequencies",
+      "purpose": "paper_main",
+      "activity_status": "candidate",
+      "run_state": "runnable_unverified",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          21
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_clade_figure",
+        "source_path": "figures.py",
+        "source_line": 194,
+        "legacy_entrypoint": "influenza_figures.legacy.figures.plot_clade",
+        "legacy_source_line": 3272,
+        "preparation": "influenza_figures.clades.prepare_clade_frequencies",
+        "registry_keys": [
+          "paper.clade"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "clades.tidy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "select_clade_reference",
+          "series": "observed_full",
+          "open_interval": [
+            "2011-08-01",
+            "2015-06-01"
+          ]
+        },
+        {
+          "operation": "select_clades_by_total_frequency",
+          "comparison": "strictly_greater_than",
+          "value": 1.0,
+          "selected": [
+            "3C",
+            "3C.2",
+            "3C.2a",
+            "3C.3",
+            "3C.3a",
+            "3C.3b"
+          ]
+        },
+        {
+          "operation": "filter_all_series_to_selected_clades"
+        },
+        {
+          "operation": "normalize_frequency",
+          "group_by": [
+            "subtype",
+            "segment",
+            "series",
+            "date"
+          ]
+        },
+        {
+          "operation": "select_forecast_dates",
+          "values": [
+            "2014-08-31",
+            "2014-11-29",
+            "2015-02-27",
+            "2015-05-28"
+          ]
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "single_tall_1_2"
+      },
+      "outputs": [
+        {
+          "owner": "paper.clade",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-clade.pdf"
+          },
+          "path": "figures/paper/fig-clade.pdf",
+          "migration_target": "figures/paper/fig-clade.pdf"
+        }
+      ],
+      "blockers": [
+        "Corrected canonical preparation is tested; the focused clade renderer still requires reference-PDF parity validation before activation."
+      ]
+    },
+    {
+      "figure_id": "paper.fixation-probability",
+      "title": "Fixation probability across four influenza proteins",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          22
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_pfix_single",
+        "source_line": 2941,
+        "registry_keys": [
+          "paper.pfix"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-probability",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "minimum_observation_day": 1095
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "single_square"
+      },
+      "outputs": [
+        {
+          "owner": "paper.fixation-probability",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-pfix.pdf"
+          },
+          "path": "figures/paper/fig-pfix.pdf",
+          "migration_target": "figures/paper/fig-pfix.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "paper.fixation-probability-vs-auc",
+      "title": "Fixation probability and AUROC improvement",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Figure 3"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          23
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_pfix_dauc",
+        "source_path": "src/influenza_figures/fixation_plot.py",
+        "renderer_entrypoint": "influenza_figures.fixation_plot.render_pfix_dauc_figure",
+        "legacy_entrypoint": "figures.legacy.plot_pfix_dauc",
+        "legacy_source_line": 2802,
+        "registry_keys": [
+          "paper.pfix_dauc"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-probability",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "minimum_observation_day": 1095
+          }
+        },
+        {
+          "data_product": "derived.fixation-auc",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "source_variant": "all_time",
+            "minimum_observation_day": 1095
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_2_8"
+      },
+      "outputs": [
+        {
+          "owner": "paper.fixation-probability-vs-auc",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-pfix-dauc.pdf"
+          },
+          "path": "figures/paper/fig-pfix-dauc.pdf",
+          "migration_target": "figures/paper/fig-pfix-dauc.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/paper/fig-pfix-dauc.pdf",
+              "sha256": "ff9d57f5f63ccbd72b72c39d4fabab64506a7c0b93da013975b14c806476b538",
+              "bytes": 29754,
+              "pages": 1,
+              "page_size_pt": [
+                521.575,
+                186.277
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "canonical_manuscript_renderer_v1"
+    },
+    {
+      "figure_id": "paper.background-clade",
+      "title": "Background fitness and clade forecasts",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Figure 5"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          24
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_background_clade",
+        "source_path": "src/influenza_figures/background_plot.py",
+        "renderer_entrypoint": "influenza_figures.background_plot.render_background_clade_figure",
+        "legacy_entrypoint": "figures.legacy.plot_dw_clade",
+        "legacy_source_line": 3522,
+        "preparation": [
+          "influenza_figures.background_plot_data.prepare_background_plot_data",
+          "influenza_figures.clades.prepare_clade_frequencies"
+        ],
+        "registry_keys": [
+          "paper.dw_clade"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "background.population-fitness",
+          "use": "rendered"
+        },
+        {
+          "input_set": "clades.tidy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_duration_days",
+          "value": 90,
+          "inclusive": true
+        },
+        {
+          "operation": "extract_background_mutations",
+          "key": [
+            "subtype",
+            "segment",
+            "position",
+            "state"
+          ],
+          "representative": "minimum_eligible_start_time",
+          "duration_filter_order": "before_representative_selection",
+          "source_times_and_outcomes_authoritative": true
+        },
+        {
+          "operation": "select_clade_reference",
+          "series": "observed_full",
+          "open_interval": [
+            "2011-08-01",
+            "2015-06-01"
+          ]
+        },
+        {
+          "operation": "select_clades_by_total_frequency",
+          "comparison": "strictly_greater_than",
+          "value": 1.0
+        },
+        {
+          "operation": "filter_all_series_to_selected_clades"
+        },
+        {
+          "operation": "normalize_frequency",
+          "group_by": [
+            "subtype",
+            "segment",
+            "series",
+            "date"
+          ]
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "one_five_over_1_4"
+      },
+      "display_policy": {
+        "background_y_spine_bounds": "outer_major_ticks",
+        "initial_advantage_y_limits": [
+          -0.016,
+          0.016
+        ],
+        "initial_advantage_y_ticks": [
+          -0.015,
+          0.0,
+          0.015
+        ],
+        "fitness_units": "fractional"
+      },
+      "outputs": [
+        {
+          "owner": "paper.background-clade",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-dw-clade.pdf"
+          },
+          "path": "figures/paper/fig-dw-clade.pdf",
+          "migration_target": "figures/paper/fig-dw-clade.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/paper/fig-dw-clade.pdf",
+              "sha256": "e09dd84f5b89a59b97feb2aa20e176d70ff94c407b3abcef392ded44f37d9071",
+              "bytes": 73865,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                244.994
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "mutation_level_sampling_v2",
+              "path": "figures/paper/fig-dw-clade.pdf",
+              "sha256": "21a75af1a0842d42bf2dab3b76c7d4a997cac34df893efc3abfdcc60c51f2a3a",
+              "bytes": 64706,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                244.994
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-14"
+            },
+            {
+              "render_revision": "duration_first_sampling_v3",
+              "path": "figures/paper/fig-dw-clade.pdf",
+              "sha256": "edff13358d1bb97316613510a2697bcca890c365f7f503d1d0d9729403f8e845",
+              "bytes": 66087,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                244.994
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            },
+            {
+              "render_revision": "figure5_axis_cosmetics_v4",
+              "path": "figures/paper/fig-dw-clade.pdf",
+              "sha256": "3b4458614110b6c94ebb99d0ad93fac485521b599eacdd52d3b75256c688aaeb",
+              "bytes": 66102,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                244.994
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "figure5_axis_cosmetics_v4"
+    },
+    {
+      "figure_id": "paper.background-components",
+      "title": "Background, population, and selection change components",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels_by_output": {
+        "figures/supplement/fig-ds.pdf": "Supplementary Figure S13",
+        "figures/supplement/fig-dw-bg.pdf": "Supplementary Figure S14",
+        "figures/supplement/fig-dw-rate.pdf": "Supplementary Figure S15"
+      },
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          25,
+          26,
+          27
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_background_selection + figures.plot_background_initial_advantage + figures.plot_background_growth",
+        "source_path": "src/influenza_figures/background_plot.py",
+        "renderer_entrypoints": [
+          "influenza_figures.background_plot.render_background_selection_figure",
+          "influenza_figures.background_plot.render_background_initial_advantage_figure",
+          "influenza_figures.background_plot.render_background_growth_figure"
+        ],
+        "legacy_entrypoints": [
+          "figures.legacy.plot_ds",
+          "figures.legacy.plot_dw_bg",
+          "figures.legacy.plot_dw_rate"
+        ],
+        "legacy_source_lines": [
+          3942,
+          4049,
+          4158
+        ],
+        "preparation": "influenza_figures.background_plot_data.prepare_background_plot_data",
+        "registry_keys": [
+          "paper.dw_rate",
+          "paper.dw_bg",
+          "paper.ds"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "background.population-fitness",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_duration_days_by_output",
+          "inclusive": true,
+          "values": {
+            "fig-dw-rate": 90,
+            "fig-dw-bg": 90,
+            "fig-ds": null
+          }
+        },
+        {
+          "operation": "extract_background_mutations",
+          "key": [
+            "subtype",
+            "segment",
+            "position",
+            "state"
+          ],
+          "representative": "minimum_eligible_start_time",
+          "duration_filter_order": "before_representative_selection_when_present",
+          "source_times_and_outcomes_authoritative": true
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "one_five_square"
+      },
+      "outputs": [
+        {
+          "owner": "paper.background-components",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-dw-rate.pdf"
+          },
+          "path": "figures/supplement/fig-dw-rate.pdf",
+          "migration_target": "figures/supplement/fig-dw-rate.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-dw-rate.pdf",
+              "sha256": "8b6f2fcd220e6a5c49df3c02444dfc1f188408d589d9b888765ced4667c19729",
+              "bytes": 29055,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "mutation_level_sampling_v2",
+              "path": "figures/supplement/fig-dw-rate.pdf",
+              "sha256": "de2d2e7d23fe4d09e088a4580608fe4c97d4035a378ca54e18f51ef3fa502ac8",
+              "bytes": 29541,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-14"
+            },
+            {
+              "render_revision": "duration_first_sampling_v3",
+              "path": "figures/supplement/fig-dw-rate.pdf",
+              "sha256": "63ecc1d254a5bcae05c3a9d9082a00b5e2dafc792e6f01636a16e2ac173f226c",
+              "bytes": 29647,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            }
+          ]
+        },
+        {
+          "owner": "paper.background-components",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-dw-bg.pdf"
+          },
+          "path": "figures/supplement/fig-dw-bg.pdf",
+          "migration_target": "figures/supplement/fig-dw-bg.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-dw-bg.pdf",
+              "sha256": "f313602b5d59bf3862512f7b168ad8bbe012aa482ab8bbe0508b6532c1dfefe0",
+              "bytes": 29657,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "mutation_level_sampling_v2",
+              "path": "figures/supplement/fig-dw-bg.pdf",
+              "sha256": "6404069158cc5d5b0e9dc6af2d1c3c43ded1c2d2b6b818779133b8cc84fe4ed8",
+              "bytes": 30269,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-14"
+            },
+            {
+              "render_revision": "duration_first_sampling_v3",
+              "path": "figures/supplement/fig-dw-bg.pdf",
+              "sha256": "12c766ef81770f4598b7ab795868580286a62cd76a8b66cdec938b14f78afb40",
+              "bytes": 29363,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-15"
+            }
+          ]
+        },
+        {
+          "owner": "paper.background-components",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-ds.pdf"
+          },
+          "path": "figures/supplement/fig-ds.pdf",
+          "migration_target": "figures/supplement/fig-ds.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-ds.pdf",
+              "sha256": "162920ed6641528fd3fd3ad6dd7b3b5cccd7777782c9eef34545eb8a64381835",
+              "bytes": 28656,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            },
+            {
+              "render_revision": "mutation_level_sampling_v2",
+              "path": "figures/supplement/fig-ds.pdf",
+              "sha256": "0ed0596338c3e7dbca9a3094b6416b3e2b2ac2ec8149e0705b6c48048b1d8c9e",
+              "bytes": 27835,
+              "pages": 1,
+              "page_size_pt": [
+                342.992,
+                342.992
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-14"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "duration_first_sampling_v3"
+    },
+    {
+      "figure_id": "paper.fixation-auc",
+      "title": "Full-model fixation AUROC",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Supplementary Figure S7"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          28
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_fixation_auc",
+        "source_path": "src/influenza_figures/fixation_plot.py",
+        "renderer_entrypoint": "influenza_figures.fixation_plot.render_fixation_auc_figure",
+        "legacy_entrypoint": "figures.legacy.plot_AUC",
+        "legacy_source_line": 3023,
+        "registry_keys": [
+          "paper.auc"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-auc",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "source_variant": "all_time",
+            "minimum_observation_day": 1095
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "single_tall_1_5"
+      },
+      "outputs": [
+        {
+          "owner": "paper.fixation-auc",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-auc.pdf"
+          },
+          "path": "figures/supplement/fig-fixation-auc.pdf",
+          "migration_target": "figures/supplement/fig-fixation-auc.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-fixation-auc.pdf",
+              "sha256": "8c408350c8eac14379bc5d4e77d60cfb13e497c23c556002a8a38de8bba5806e",
+              "bytes": 22268,
+              "pages": 1,
+              "page_size_pt": [
+                249.449,
+                374.173
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "canonical_manuscript_renderer_v1"
+    },
+    {
+      "figure_id": "paper.single-site-auc",
+      "title": "Rare-filtered single-site fixation AUROC",
+      "purpose": "paper_supplement",
+      "activity_status": "active",
+      "run_state": "verified_clean",
+      "migration_state": "canonical",
+      "manuscript_labels": [
+        "Supplementary Figure S16"
+      ],
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          29
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_single_site_auc",
+        "source_path": "src/influenza_figures/fixation_plot.py",
+        "renderer_entrypoint": "influenza_figures.fixation_plot.render_fixation_auc_figure",
+        "legacy_entrypoint": "figures.legacy.plot_AUC",
+        "legacy_source_line": 3023,
+        "registry_keys": [
+          "paper.auc_ss"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-auc",
+          "use": "rendered",
+          "selector": {
+            "model_id": "slm",
+            "source_variant": "paper_date_filtered",
+            "minimum_observation_day": 1095
+          },
+          "lineage": {
+            "prediction_family": "fixation.single-site-predictions",
+            "legacy_prediction_template": "data/fix-loss/fixation_pred_model_SLM_{H3,N2,H1,N1}_w_date.csv",
+            "legacy_metric_template": "data/fix-loss/df_SS_AUC_{H3,N2,H1,N1}_1095.csv",
+            "excluded_variant": "slm/extended_all_time from df_SLM_*"
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        },
+        {
+          "operation": "method",
+          "value": "rare-filtered SLM"
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "single_tall_1_5"
+      },
+      "outputs": [
+        {
+          "owner": "paper.single-site-auc",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-auc-ss.pdf"
+          },
+          "path": "figures/supplement/fig-auc-ss.pdf",
+          "migration_target": "figures/supplement/fig-auc-ss.pdf",
+          "verified_instances": [
+            {
+              "render_revision": "canonical_manuscript_renderer_v1",
+              "path": "figures/supplement/fig-auc-ss.pdf",
+              "sha256": "9ecea38965128f8fedb78efb49d7ab090f57f34d7dc115656b1a0f0e2b154391",
+              "bytes": 22549,
+              "pages": 1,
+              "page_size_pt": [
+                249.449,
+                374.173
+              ],
+              "visual_qa": {
+                "status": "passed",
+                "clean_render": true,
+                "no_clipping": true,
+                "paper_style_intact": true
+              },
+              "verification_date": "2026-10-13"
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "render_revision": "canonical_manuscript_renderer_v1"
+    },
+    {
+      "figure_id": "diagnostic.selection-alignment",
+      "title": "Aligned H3 and H1 smoothed selection",
+      "purpose": "diagnostic",
+      "activity_status": "candidate",
+      "run_state": "stale_output",
+      "migration_state": "needs_decision",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          31
+        ]
+      },
+      "implementation": {
+        "entrypoint": "notebook.inline_moving_average"
+      },
+      "inputs": [
+        {
+          "input_set": "selection.h3-h1-alignment",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "moving_average",
+          "window": 10
+        },
+        {
+          "operation": "normalize_each_series_by_max"
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "legacy_matplotlib_default"
+      },
+      "outputs": [
+        {
+          "owner": "diagnostic.selection-alignment",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "h3-h1-selection.pdf"
+          },
+          "path": "figures/diagnostic/h3-h1-selection.pdf",
+          "migration_target": "figures/diagnostic/h3-h1-selection.pdf"
+        }
+      ],
+      "blockers": [
+        "Current cell source no longer matches its saved statistical/scatter output."
+      ]
+    },
+    {
+      "figure_id": "paper.emd-clade",
+      "title": "Nine-month EMD and clade forecasts",
+      "purpose": "paper_main",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "needs_decision",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          36
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_emd_clade",
+        "source_line": 2177,
+        "preparation": [
+          "influenza_figures.emd_plot.collect_emd_figure_data",
+          "influenza_figures.clades.prepare_clade_frequencies"
+        ],
+        "registry_keys": [
+          "paper.emd_clade"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        },
+        {
+          "input_set": "clades.tidy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "select_horizon",
+          "value": "9m"
+        },
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol",
+          "value": "results_grid"
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "comparison",
+          "model": "full_model_cross_validated_rare_filtered",
+          "reference": "null"
+        },
+        {
+          "operation": "select_clade_reference",
+          "series": "observed_full",
+          "open_interval": [
+            "2011-08-01",
+            "2015-06-01"
+          ]
+        },
+        {
+          "operation": "select_clades_by_total_frequency",
+          "comparison": "strictly_greater_than",
+          "value": 1.0
+        },
+        {
+          "operation": "filter_all_series_to_selected_clades"
+        },
+        {
+          "operation": "normalize_frequency",
+          "group_by": [
+            "subtype",
+            "segment",
+            "series",
+            "date"
+          ]
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "double_over_1_6"
+      },
+      "outputs": [
+        {
+          "owner": "paper.emd-clade",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-emd-clade.pdf"
+          },
+          "path": "figures/paper/fig-emd-clade.pdf",
+          "migration_target": "figures/paper/fig-emd-clade.pdf"
+        }
+      ],
+      "blockers": [
+        "The legacy combined renderer expects old wide clade tables; a focused wrapper and reference-PDF parity check are still required. Corrected EMD and clade preparation are available separately."
+      ]
+    },
+    {
+      "figure_id": "legacy.paper.ha-circle",
+      "title": "Legacy H3N2 and H1N1 HA circle figures",
+      "purpose": "diagnostic",
+      "activity_status": "legacy",
+      "run_state": "not_run",
+      "migration_state": "needs_decision",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          37,
+          38
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_figure_HA_circle",
+        "source_line": 4376,
+        "registry_keys": [
+          "paper.ha_circle"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.nested-legacy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "protein_landmark_annotation"
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "single_square"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.paper.ha-circle",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "fig-H3N2-HA-circle.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/fig-H3N2-HA-circle.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        },
+        {
+          "owner": "legacy.paper.ha-circle",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "fig-H1N1-HA-circle.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/fig-H1N1-HA-circle.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Renderer saves outside figures/ and the approved selection-data version is unresolved."
+      ]
+    },
+    {
+      "figure_id": "paper.overview-true-sim",
+      "title": "Overview true and simulated trajectories",
+      "purpose": "paper_main",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          39
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_overview_schematic_true + plot_overview_schematic_sim",
+        "source_lines": [
+          278,
+          324
+        ],
+        "registry_keys": [
+          "paper.overview_true",
+          "paper.overview_sim"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.overview-trajectories",
+          "use": "rendered",
+          "selector": {
+            "scenario": [
+              "observed",
+              "simulation"
+            ]
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "seeded_simulation",
+          "seed": 7
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "overview_strip"
+      },
+      "outputs": [
+        {
+          "owner": "paper.overview-true-sim",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-true.pdf"
+          },
+          "path": "figures/paper/fig-overview-true.pdf",
+          "migration_target": "figures/paper/fig-overview-true.pdf"
+        },
+        {
+          "owner": "paper.overview-true-sim",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-sim.pdf"
+          },
+          "path": "figures/paper/fig-overview-sim.pdf",
+          "migration_target": "figures/paper/fig-overview-sim.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "paper.overview-fixloss",
+      "title": "Fixation and loss overview schematic",
+      "purpose": "paper_main",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          40
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_overview_schematic_fixloss",
+        "source_line": 445,
+        "registry_keys": [
+          "slides.overview_fixloss"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.overview-trajectories",
+          "use": "rendered",
+          "selector": {
+            "scenario": "fixation_loss"
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "seeded_simulation",
+          "seed": 3
+        }
+      ],
+      "style_profile": "paper_v1",
+      "canvas": {
+        "profile": "slide_overview_fixloss"
+      },
+      "outputs": [
+        {
+          "owner": "paper.overview-fixloss",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-fixloss.pdf"
+          },
+          "path": "figures/paper/fig-overview-fixloss.pdf",
+          "migration_target": "figures/paper/fig-overview-fixloss.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "diagnostic.delta-h-distributions",
+      "title": "Fitness-change distributions for fixed and lost mutations",
+      "purpose": "diagnostic",
+      "activity_status": "candidate",
+      "run_state": "stale_output",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          41
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_dH_distribution_slides",
+        "source_line": 4274,
+        "preparation": "influenza_figures.background.extract_background_mutations",
+        "registry_keys": [
+          "slides.dh_distribution"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "background.delta-h",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_duration_days",
+          "value": 90,
+          "inclusive": true
+        },
+        {
+          "operation": "extract_background_mutations",
+          "key": [
+            "subtype",
+            "segment",
+            "position",
+            "state"
+          ],
+          "representative": "minimum_eligible_start_time",
+          "duration_filter_order": "before_representative_selection",
+          "source_times_and_outcomes_authoritative": true
+        },
+        {
+          "operation": "raw_and_rate_views"
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "slide_distribution"
+      },
+      "outputs": [
+        {
+          "owner": "diagnostic.delta-h-distributions",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-dH-distribution-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2_HA",
+                "H3N2_NA",
+                "H1N1_HA",
+                "H1N1_NA"
+              ]
+            }
+          },
+          "path_template": "figures/diagnostic/fig-dH-distribution-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          },
+          "migration_target_template": "figures/diagnostic/fig-dH-distribution-{protein}-slides.pdf"
+        },
+        {
+          "owner": "diagnostic.delta-h-distributions",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-dH-rate-distribution-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2_HA",
+                "H3N2_NA",
+                "H1N1_HA",
+                "H1N1_NA"
+              ]
+            }
+          },
+          "path_template": "figures/diagnostic/fig-dH-rate-distribution-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          },
+          "migration_target_template": "figures/diagnostic/fig-dH-rate-distribution-{protein}-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "grant.overview",
+      "title": "Grant overview of frequency trajectories and HA selection",
+      "purpose": "grant",
+      "activity_status": "blocker",
+      "run_state": "blocked_missing_input",
+      "migration_state": "needs_decision",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          45
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_overview_grant",
+        "source_line": 5049,
+        "registry_keys": [
+          "grant.overview"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "frequency.four-proteins",
+          "use": "rendered"
+        },
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [],
+      "style_profile": "grant_v1",
+      "canvas": {
+        "profile": "grant_overview"
+      },
+      "outputs": [
+        {
+          "owner": "grant.overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview.pdf"
+          },
+          "path": "figures/grant/fig-overview.pdf",
+          "migration_target": "figures/grant/fig-overview.pdf"
+        },
+        {
+          "owner": "grant.overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/figure-3-IAV-overview.png"
+          },
+          "path": "figures/grant/figure-3-IAV-overview.png",
+          "migration_target": "figures/grant/figure-3-IAV-overview.png"
+        }
+      ],
+      "blockers": [
+        "Canonical inputs are available, but the grant figure's continuing relevance and adapter verification remain unconfirmed."
+      ]
+    },
+    {
+      "figure_id": "slides.surveillance",
+      "title": "Influenza sequence surveillance over time",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          49
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_surveillance_slides",
+        "source_line": 5324,
+        "registry_keys": [
+          "slides.surveillance"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "surveillance.sequence-counts",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "date_window",
+          "start_year": 1950,
+          "end_year": 2025
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_wide_short"
+      },
+      "outputs": [
+        {
+          "owner": "slides.surveillance",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-gisaid-slides.pdf"
+          },
+          "path": "figures/slides/fig-gisaid-slides.pdf",
+          "migration_target": "figures/slides/fig-gisaid-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.simulation",
+      "title": "Illustrative trajectory simulation",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          50
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_simulation_slides",
+        "source_line": 5918,
+        "registry_keys": [
+          "slides.simulation"
+        ]
+      },
+      "inputs": [],
+      "transformations": [
+        {
+          "operation": "seeded_simulation",
+          "seed": 6
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_wide_short"
+      },
+      "outputs": [
+        {
+          "owner": "slides.simulation",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-simulation-slides.pdf"
+          },
+          "path": "figures/slides/fig-simulation-slides.pdf",
+          "migration_target": "figures/slides/fig-simulation-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.overview",
+      "title": "True, simulated, and prediction overview slides",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          51
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_overview_schematic_true_slides + plot_overview_schematic_sim_slides + plot_overview_schematic_true_and_sim_slides",
+        "source_lines": [
+          5368,
+          5414,
+          5469
+        ],
+        "registry_keys": [
+          "slides.overview_true",
+          "slides.overview_sim",
+          "slides.overview_combined"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.overview-trajectories",
+          "use": "rendered",
+          "selector": {
+            "scenario": [
+              "observed",
+              "simulation"
+            ]
+          }
+        }
+      ],
+      "transformations": [],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profiles": [
+          "slide_overview_true",
+          "slide_overview_sim",
+          "slide_overview_combined"
+        ]
+      },
+      "outputs": [
+        {
+          "owner": "slides.overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-true-slides.pdf"
+          },
+          "path": "figures/slides/fig-overview-true-slides.pdf",
+          "migration_target": "figures/slides/fig-overview-true-slides.pdf"
+        },
+        {
+          "owner": "slides.overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-sim-slides.pdf"
+          },
+          "path": "figures/slides/fig-overview-sim-slides.pdf",
+          "migration_target": "figures/slides/fig-overview-sim-slides.pdf"
+        },
+        {
+          "owner": "slides.overview",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-overview-sim-prediction-slides.pdf"
+          },
+          "path": "figures/slides/fig-overview-sim-prediction-slides.pdf",
+          "migration_target": "figures/slides/fig-overview-sim-prediction-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.frequency",
+      "title": "Frequency trajectories for four influenza proteins",
+      "purpose": "slides",
+      "activity_status": "active",
+      "run_state": "runnable_unverified",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          52
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_frequency_slide",
+        "source_path": "figures.py",
+        "source_line": 300,
+        "legacy_entrypoint": "influenza_figures.legacy.figures.plot_frequency_slides",
+        "legacy_source_line": 5616,
+        "registry_keys": [
+          "slides.frequency"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "frequency.four-proteins",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "h1_time_shift_days",
+          "value": 120
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_frequency"
+      },
+      "outputs": [
+        {
+          "owner": "slides.frequency",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-{protein}-frequency-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-{protein}-frequency-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-{protein}-frequency-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "blocker.slides.selection-legacy",
+      "title": "Obsolete nested-data selection slides",
+      "purpose": "slides",
+      "activity_status": "blocker",
+      "run_state": "blocked_schema",
+      "migration_state": "superseded",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          53
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_slides",
+        "source_line": 5692,
+        "registry_keys": [
+          "slides.selection"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.nested-legacy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 2
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "slide_selection"
+      },
+      "outputs": [
+        {
+          "owner": "blocker.slides.selection-legacy",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-{protein}-s-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-{protein}-s-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "Inputs lack required MutationFrequency.",
+        "Two H1N1pdm paths are absent.",
+        "Cell 54 is the intended superset-data replacement."
+      ]
+    },
+    {
+      "figure_id": "slides.selection",
+      "title": "Selection-coefficient slides for four influenza proteins",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          54
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_slides",
+        "source_line": 5692,
+        "registry_keys": [
+          "slides.selection"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_selection"
+      },
+      "outputs": [
+        {
+          "owner": "slides.selection",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-{protein}-s-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-{protein}-s-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-{protein}-s-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.selection-subsets",
+      "title": "Functional-site selection subset slides",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          55
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_selection_subset_slides",
+        "source_line": 5752,
+        "registry_keys": [
+          "slides.selection_subset"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "selection.with-counts",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_mutation_count",
+          "value": 20
+        },
+        {
+          "operation": "subsets",
+          "values": [
+            "RBS",
+            "Koel",
+            "canton_globular_head"
+          ]
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_selection_subset"
+      },
+      "outputs": [
+        {
+          "owner": "slides.selection-subsets",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "paths": [
+              "figures/fig-H3N2-HA-RBS-s-slides.pdf",
+              "figures/fig-H1N1-HA-RBS-s-slides.pdf",
+              "figures/fig-H3N2-HA-Koel-s-slides.pdf",
+              "figures/fig-H1N1-HA-Caton-s-slides.pdf"
+            ]
+          },
+          "paths": [
+            "figures/slides/fig-H3N2-HA-RBS-s-slides.pdf",
+            "figures/slides/fig-H1N1-HA-RBS-s-slides.pdf",
+            "figures/slides/fig-H3N2-HA-Koel-s-slides.pdf",
+            "figures/slides/fig-H1N1-HA-Caton-s-slides.pdf"
+          ],
+          "migration_targets": [
+            "figures/slides/fig-H3N2-HA-RBS-s-slides.pdf",
+            "figures/slides/fig-H1N1-HA-RBS-s-slides.pdf",
+            "figures/slides/fig-H3N2-HA-Koel-s-slides.pdf",
+            "figures/slides/fig-H1N1-HA-Caton-s-slides.pdf"
+          ]
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.example-frequency",
+      "title": "Toy-model example frequency trajectories",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          56
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_example_frequency_slides",
+        "source_line": 5868,
+        "registry_keys": [
+          "slides.example_frequency"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "example.toy-frequency",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_example_frequency"
+      },
+      "outputs": [
+        {
+          "owner": "slides.example-frequency",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-example-frequency-slides.pdf"
+          },
+          "path": "figures/slides/fig-example-frequency-slides.pdf",
+          "migration_target": "figures/slides/fig-example-frequency-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.auc-2015",
+      "title": "2015 fixation AUROC slides",
+      "purpose": "slides",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          57
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_AUC_slides",
+        "source_line": 6036,
+        "registry_keys": [
+          "slides.auc"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.presentation-auc-2015",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "model_and_null_only_views"
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_auc"
+      },
+      "outputs": [
+        {
+          "owner": "slides.auc-2015",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "2015-H3N2-HA",
+                "2015-H1N1-HA",
+                "2015-H3N2-NA",
+                "2015-H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-AUC-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "2015-H3N2-HA",
+              "2015-H1N1-HA",
+              "2015-H3N2-NA",
+              "2015-H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-AUC-{protein}-slides.pdf"
+        },
+        {
+          "owner": "slides.auc-2015",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{protein}-null-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "2015-H3N2-HA",
+                "2015-H1N1-HA",
+                "2015-H3N2-NA",
+                "2015-H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-AUC-{protein}-null-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "2015-H3N2-HA",
+              "2015-H1N1-HA",
+              "2015-H3N2-NA",
+              "2015-H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-AUC-{protein}-null-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.auc-fullmodel",
+      "title": "Full-model fixation AUROC slides",
+      "purpose": "slides",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          59
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_AUC_slides",
+        "source_line": 6036,
+        "registry_keys": [
+          "slides.auc"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-auc",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "source_variant": "all_time",
+            "minimum_observation_day": 1095
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "model_and_null_only_views"
+        },
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_auc"
+      },
+      "outputs": [
+        {
+          "owner": "slides.auc-fullmodel",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{protein}-1095-model-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-AUC-{protein}-1095-model-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-AUC-{protein}-1095-model-slides.pdf"
+        },
+        {
+          "owner": "slides.auc-fullmodel",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{protein}-1095-null-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-AUC-{protein}-1095-null-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-AUC-{protein}-1095-null-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "legacy.diagnostic.auc-methods",
+      "title": "Legacy AUROC diagnostics across FullModel, SLM, FMSS, and SLFS",
+      "purpose": "diagnostic",
+      "activity_status": "legacy",
+      "run_state": "not_run",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          60
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.compute_AUC_slides + plot_AUC_slides",
+        "source_lines": [
+          5998,
+          6036
+        ],
+        "registry_keys": [
+          "slides.auc"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "fixation.method-diagnostics-legacy",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "method_comparison",
+          "methods": {
+            "FullModel": "superseded_by_cell_59",
+            "SLM": "rare_filtered_diagnostic",
+            "FMSS": "legacy_diagnostic",
+            "SLFS": "legacy_diagnostic"
+          }
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profile": "slide_auc"
+      },
+      "outputs": [
+        {
+          "owner": "legacy.diagnostic.auc-methods",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{method}-{protein}-1095-model-slides.pdf",
+            "dimensions": {
+              "method": [
+                "FullModel",
+                "SLM",
+                "FMSS",
+                "SLFS"
+              ],
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-AUC-{method}-{protein}-1095-model-slides.pdf",
+          "dimensions": {
+            "method": [
+              "FullModel",
+              "SLM",
+              "FMSS",
+              "SLFS"
+            ],
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        },
+        {
+          "owner": "legacy.diagnostic.auc-methods",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-AUC-{method}-{protein}-1095-null-slides.pdf",
+            "dimensions": {
+              "method": [
+                "FullModel",
+                "SLM",
+                "FMSS",
+                "SLFS"
+              ],
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-AUC-{method}-{protein}-1095-null-slides.pdf",
+          "dimensions": {
+            "method": [
+              "FullModel",
+              "SLM",
+              "FMSS",
+              "SLFS"
+            ],
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "FMSS and SLFS are retained only as legacy diagnostics; their generated tables and figures are not active paper artifacts."
+      ]
+    },
+    {
+      "figure_id": "slides.fixation-probability",
+      "title": "Full-model fixation-probability slides",
+      "purpose": "slides",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          61
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_pfix_slides",
+        "source_line": 6121,
+        "registry_keys": [
+          "slides.pfix"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.fixation-probability",
+          "use": "rendered",
+          "selector": {
+            "model_id": "full_model",
+            "minimum_observation_day": 1095
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_pfix"
+      },
+      "outputs": [
+        {
+          "owner": "slides.fixation-probability",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-pfix-{protein}-1095-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-pfix-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-pfix-{protein}-1095-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "slides.fix-loss-examples",
+      "title": "Fixation and loss trajectory examples",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          62,
+          63
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_fix_loss_example_slides",
+        "source_line": 5534,
+        "registry_keys": [
+          "slides.fix_loss_example"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "fixloss.examples",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "load_hidden_trajectory_ensemble",
+          "files_per_example": 2000
+        },
+        {
+          "operation": "read_deterministic_zip_bundle",
+          "members_per_example": 2007
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_wide_short"
+      },
+      "outputs": [
+        {
+          "owner": "slides.fix-loss-examples",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-fix-loss-example-1-slides.pdf"
+          },
+          "path": "figures/slides/fig-fix-loss-example-1-slides.pdf",
+          "migration_target": "figures/slides/fig-fix-loss-example-1-slides.pdf"
+        },
+        {
+          "owner": "slides.fix-loss-examples",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-fix-loss-example-2-slides.pdf"
+          },
+          "path": "figures/slides/fig-fix-loss-example-2-slides.pdf",
+          "migration_target": "figures/slides/fig-fix-loss-example-2-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "blocker.legacy.slides.emd-9m",
+      "title": "Obsolete nine-month EMD slides using unsuffixed inputs",
+      "purpose": "slides",
+      "activity_status": "blocker",
+      "run_state": "blocked_missing_input",
+      "migration_state": "superseded",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          64
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_emd_slides + plot_emd_distribution_slides + plot_emd_joint_slides",
+        "source_lines": [
+          5813,
+          6170,
+          6244
+        ],
+        "registry_keys": [
+          "slides.emd",
+          "slides.emd_distribution",
+          "slides.emd_joint"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.bare-9m-missing",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "minimum_observation_time_days",
+          "value": 1095
+        }
+      ],
+      "style_profile": "legacy_current_v1",
+      "canvas": {
+        "profiles": [
+          "slide_emd",
+          "slide_distribution",
+          "slide_emd_joint"
+        ]
+      },
+      "outputs": [
+        {
+          "owner": "blocker.legacy.slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-9m-{protein}-1095-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-emd-9m-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        },
+        {
+          "owner": "blocker.legacy.slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-distribution-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-emd-distribution-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        },
+        {
+          "owner": "blocker.legacy.slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+            "dimensions": {
+              "stage": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          },
+          "path_template": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+          "dimensions": {
+            "stage": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "archived_reference": true,
+          "write_policy": "never"
+        },
+        {
+          "owner": "blocker.legacy.slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-emd-joint-9m-1095-4-alt-slides.pdf"
+          },
+          "path": "archive/pre_plot_reorg_2026-08-26/original/figures/fig-emd-joint-9m-1095-4-alt-slides.pdf",
+          "archived_reference": true,
+          "write_policy": "never"
+        }
+      ],
+      "blockers": [
+        "All four unsuffixed EMD inputs are absent.",
+        "Cell 65 supplies the extant full inputs and owns the intended replacement."
+      ]
+    },
+    {
+      "figure_id": "slides.emd-9m",
+      "title": "Nine-month full-model versus null EMD slides",
+      "purpose": "slides",
+      "activity_status": "active",
+      "run_state": "stale_output",
+      "migration_state": "candidate",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          65
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_emd_slides + plot_emd_distribution_slides + plot_emd_joint_slides",
+        "source_lines": [
+          5813,
+          6170,
+          6244
+        ],
+        "registry_keys": [
+          "slides.emd",
+          "slides.emd_distribution",
+          "slides.emd_joint"
+        ]
+      },
+      "inputs": [
+        {
+          "input_set": "emd.canonical",
+          "use": "rendered"
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "inference_relative_observation_date_cutoff",
+          "relative_day": 1095,
+          "inclusive": true,
+          "initial_dates": {
+            "h3n2": "2009-01-02",
+            "h1n1": "2009-05-02"
+          },
+          "cutoff_dates": {
+            "h3n2": "2012-01-02",
+            "h1n1": "2012-05-01"
+          },
+          "print_report": true
+        },
+        {
+          "operation": "evaluation_protocol",
+          "value": "results_grid"
+        },
+        {
+          "operation": "exact_evaluation_id_pairing"
+        },
+        {
+          "operation": "comparison",
+          "model": "full_model_cross_validated_rare_filtered",
+          "reference": "null"
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profiles": [
+          "slide_emd",
+          "slide_distribution",
+          "slide_emd_joint"
+        ]
+      },
+      "outputs": [
+        {
+          "owner": "slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-9m-{protein}-1095-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-9m-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-9m-{protein}-1095-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-distribution-9m-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "H3N2-HA",
+                "H3N2-NA",
+                "H1N1-HA",
+                "H1N1-NA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-distribution-9m-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-distribution-9m-{protein}-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+            "dimensions": {
+              "stage": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+          "dimensions": {
+            "stage": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-emd-joint-9m-1095-{stage}-slides.pdf"
+        },
+        {
+          "owner": "slides.emd-9m",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-emd-joint-9m-1095-4-alt-slides.pdf"
+          },
+          "path": "figures/slides/fig-emd-joint-9m-1095-4-alt-slides.pdf",
+          "migration_target": "figures/slides/fig-emd-joint-9m-1095-4-alt-slides.pdf"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "figure_id": "blocker.grant.auc",
+      "title": "Grant HA-only AUROC figure",
+      "purpose": "grant",
+      "activity_status": "blocker",
+      "run_state": "not_run",
+      "migration_state": "needs_decision",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          70
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_AUC_grant",
+        "source_line": 4969,
+        "registry_keys": [
+          "grant.auc"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.presentation-auc-2015",
+          "use": "rendered",
+          "selector": {
+            "segment": "ha"
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "select_ha_only"
+        }
+      ],
+      "style_profile": "grant_v1",
+      "canvas": {
+        "profile": "grant_auc"
+      },
+      "outputs": [
+        {
+          "owner": "blocker.grant.auc",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path": "figures/fig-auc.pdf"
+          },
+          "path": "figures/grant/fig-auc-ha-2015.pdf",
+          "migration_target": "figures/grant/fig-auc-ha-2015.pdf"
+        }
+      ],
+      "blockers": [
+        "The output collision is resolved by figures/grant/, but the grant figure's continuing relevance requires approval."
+      ]
+    },
+    {
+      "figure_id": "slides.fixation-probability-2015",
+      "title": "2015 HA fixation-probability slides",
+      "purpose": "slides",
+      "activity_status": "candidate",
+      "run_state": "not_run",
+      "migration_state": "legacy_keep",
+      "notebook": {
+        "path": "archive/pre_plot_reorg_2026-08-26/original/figures.ipynb",
+        "cells": [
+          71
+        ]
+      },
+      "implementation": {
+        "entrypoint": "figures.plot_pfix_slides",
+        "source_line": 6121,
+        "registry_keys": [
+          "slides.pfix"
+        ]
+      },
+      "inputs": [
+        {
+          "data_product": "derived.presentation-fixation-probability-2015",
+          "use": "rendered",
+          "selector": {
+            "segment": "ha"
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "operation": "select_ha_only"
+        }
+      ],
+      "style_profile": "slides_v1",
+      "canvas": {
+        "profile": "slide_pfix"
+      },
+      "outputs": [
+        {
+          "owner": "slides.fixation-probability-2015",
+          "artifact_kind": "rendered_figure",
+          "legacy_artifact": {
+            "path_template": "figures/fig-pfix-{protein}-slides.pdf",
+            "dimensions": {
+              "protein": [
+                "2015-H3N2-HA",
+                "2015-H1N1-HA"
+              ]
+            }
+          },
+          "path_template": "figures/slides/fig-pfix-{protein}-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "2015-H3N2-HA",
+              "2015-H1N1-HA"
+            ]
+          },
+          "migration_target_template": "figures/slides/fig-pfix-{protein}-slides.pdf"
+        }
+      ],
+      "blockers": []
+    }
+  ],
+  "collisions": [
+    {
+      "collision_id": "collision.selection-structure-space",
+      "kind": "path_collision",
+      "artifacts": [
+        {
+          "path": "figures/fig-selection-structure-space.pdf"
+        }
+      ],
+      "owner_ids": [
+        "legacy.paper.selection-structure-space",
+        "paper.selection-structure-space"
+      ],
+      "resolution_status": "resolved_by_archive_and_purpose_qualified_outputs",
+      "canonical_owner": "paper.selection-structure-space",
+      "note": "Archive cell 11 output and keep cell 12 as the candidate owner.",
+      "legacy_artifacts": [
+        {
+          "path": "figures/fig-selection-structure-space.pdf"
+        }
+      ]
+    },
+    {
+      "collision_id": "collision.clade",
+      "kind": "path_collision",
+      "artifacts": [
+        {
+          "path": "figures/fig-clade.pdf"
+        }
+      ],
+      "owner_ids": [
+        "legacy.paper.clade-old",
+        "paper.clade"
+      ],
+      "resolution_status": "resolved_by_archive_and_purpose_qualified_outputs",
+      "canonical_owner": "paper.clade",
+      "note": "The saved kernel ran the old producer after the new producer, so the current PDF cannot establish ownership.",
+      "legacy_artifacts": [
+        {
+          "path": "figures/fig-clade.pdf"
+        }
+      ]
+    },
+    {
+      "collision_id": "collision.paper-grant-auc",
+      "kind": "path_collision",
+      "artifacts": [
+        {
+          "path": "figures/fig-auc.pdf"
+        }
+      ],
+      "owner_ids": [
+        "paper.fixation-auc",
+        "blocker.grant.auc"
+      ],
+      "resolution_status": "resolved_by_archive_and_purpose_qualified_outputs",
+      "note": "Keep purpose-qualified paper and grant paths; these are scientifically different figures.",
+      "legacy_artifacts": [
+        {
+          "path": "figures/fig-auc.pdf"
+        }
+      ],
+      "canonical_paths": [
+        "figures/paper/fig-fixation-auc.pdf",
+        "figures/grant/fig-auc-ha-2015.pdf"
+      ]
+    },
+    {
+      "collision_id": "collision.selection-slides",
+      "kind": "path_collision",
+      "artifacts": [
+        {
+          "path_template": "figures/fig-{protein}-s-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          }
+        }
+      ],
+      "owner_ids": [
+        "blocker.slides.selection-legacy",
+        "slides.selection"
+      ],
+      "resolution_status": "resolved_by_archive_and_purpose_qualified_outputs",
+      "canonical_owner": "slides.selection",
+      "note": "Cell 54 uses the with-counts superset required by the renderer.",
+      "legacy_artifacts": [
+        {
+          "path_template": "figures/fig-{protein}-s-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "collision_id": "collision.emd-9m-slides",
+      "kind": "path_collision",
+      "artifacts": [
+        {
+          "path_template": "figures/fig-emd-9m-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          }
+        },
+        {
+          "path_template": "figures/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+          "dimensions": {
+            "stage": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "path": "figures/fig-emd-joint-9m-1095-4-alt-slides.pdf"
+        }
+      ],
+      "owner_ids": [
+        "blocker.legacy.slides.emd-9m",
+        "slides.emd-9m"
+      ],
+      "resolution_status": "resolved_by_archive_and_purpose_qualified_outputs",
+      "canonical_owner": "slides.emd-9m",
+      "note": "Cell 64 inputs are absent; cell 65 owns the candidate replacement.",
+      "legacy_artifacts": [
+        {
+          "path_template": "figures/fig-emd-9m-{protein}-1095-slides.pdf",
+          "dimensions": {
+            "protein": [
+              "H3N2-HA",
+              "H3N2-NA",
+              "H1N1-HA",
+              "H1N1-NA"
+            ]
+          }
+        },
+        {
+          "path_template": "figures/fig-emd-joint-9m-1095-{stage}-slides.pdf",
+          "dimensions": {
+            "stage": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "path": "figures/fig-emd-joint-9m-1095-4-alt-slides.pdf"
+        }
+      ]
+    },
+    {
+      "collision_id": "collision.fullmodel-auc-producers",
+      "kind": "producer_duplication",
+      "artifacts": [
+        {
+          "path_template": "data/fix-loss/df_FullModel_AUC_{protein}_1095.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "owner_ids": [
+        "derived.fullmodel-auc-1095"
+      ],
+      "producer_cells": [
+        23,
+        28,
+        59,
+        60
+      ],
+      "resolution_status": "resolved_canonical_single_owner",
+      "canonical_owner": "derived.fixation-auc",
+      "canonical_path": "data/plotting/derived/fixation_metrics/auc.csv"
+    },
+    {
+      "collision_id": "collision.fullmodel-pfix-producers",
+      "kind": "producer_duplication",
+      "artifacts": [
+        {
+          "path_template": "data/fix-loss/df_FullModel_pfix_{protein}_1095.csv",
+          "dimensions": {
+            "protein": [
+              "H3N2_HA",
+              "H3N2_NA",
+              "H1N1_HA",
+              "H1N1_NA"
+            ]
+          }
+        }
+      ],
+      "owner_ids": [
+        "derived.fullmodel-pfix-1095"
+      ],
+      "producer_cells": [
+        22,
+        23,
+        61
+      ],
+      "resolution_status": "resolved_canonical_single_owner",
+      "canonical_owner": "derived.fixation-probability",
+      "canonical_path": "data/plotting/derived/fixation_metrics/fixation_probability.csv"
+    },
+    {
+      "collision_id": "alias.caton-canton",
+      "kind": "naming_alias",
+      "artifacts": [
+        {
+          "paths": [
+            "figures/fig-H1N1-HA-Caton-s-slides.pdf",
+            "figures/fig-H1N1-HA-Canton-s-slides.pdf"
+          ]
+        }
+      ],
+      "owner_ids": [
+        "slides.selection-subsets"
+      ],
+      "resolution_status": "resolved_canonical_canton",
+      "note": "Use canton to match the source column and archive the misspelled alias.",
+      "canonical_path": "figures/slides/fig-H1N1-HA-Canton-s-slides.pdf"
+    }
+  ]
+}

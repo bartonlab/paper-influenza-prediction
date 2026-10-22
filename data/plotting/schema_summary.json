@@ -1,0 +1,129 @@
+{
+  "aligned_selection_v1": {
+    "source_files": 3,
+    "canonical_paths": [
+      "data/plotting/inputs/selection/aligned_ha_selection.csv",
+      "data/plotting/inputs/selection/aligned_ha_summary.csv",
+      "data/plotting/inputs/selection/aligned_na_selection.csv"
+    ]
+  },
+  "allele_frequency_matrix_v1": {
+    "source_files": 4,
+    "canonical_paths": [
+      "data/plotting/inputs/frequencies/h1n1_ha_allele_frequencies.txt",
+      "data/plotting/inputs/frequencies/h1n1_na_allele_frequencies.txt",
+      "data/plotting/inputs/frequencies/h3n2_ha_allele_frequencies.txt",
+      "data/plotting/inputs/frequencies/h3n2_na_allele_frequencies.txt"
+    ]
+  },
+  "background_fitness_v2": {
+    "source_files": 8,
+    "canonical_paths": [
+      "data/plotting/inputs/background/full.csv",
+      "data/plotting/inputs/background/population_fitness.csv"
+    ]
+  },
+  "clade_frequency_v1": {
+    "source_files": 3,
+    "canonical_paths": [
+      "data/plotting/inputs/clades/h3n2_ha_frequencies.csv"
+    ]
+  },
+  "editable_powerpoint_artwork_v1": {
+    "source_files": 1,
+    "canonical_paths": [
+      "data/plotting/inputs/artwork/fig-model-overview.pptx"
+    ]
+  },
+  "fix_loss_example_bundle_v1": {
+    "source_files": 4014,
+    "canonical_paths": [
+      "data/plotting/inputs/examples/fix_loss_example_1.zip",
+      "data/plotting/inputs/examples/fix_loss_example_2.zip"
+    ]
+  },
+  "fixation_auc_v1": {
+    "source_files": 32,
+    "canonical_paths": [
+      "data/plotting/derived/fixation_metrics/auc.csv"
+    ]
+  },
+  "fixation_predictions_v1": {
+    "source_files": 12,
+    "canonical_paths": [
+      "data/plotting/inputs/fixation/predictions.csv"
+    ]
+  },
+  "fixation_probability_v1": {
+    "source_files": 24,
+    "canonical_paths": [
+      "data/plotting/derived/fixation_metrics/fixation_probability.csv"
+    ]
+  },
+  "overview_trajectories_v1": {
+    "source_files": 3,
+    "canonical_paths": [
+      "data/plotting/derived/overview/trajectories.csv"
+    ]
+  },
+  "presentation_auc_2015_v1": {
+    "source_files": 4,
+    "canonical_paths": [
+      "data/plotting/derived/fixation_metrics/auc_2015.csv"
+    ]
+  },
+  "presentation_fixation_probability_2015_v1": {
+    "source_files": 2,
+    "canonical_paths": [
+      "data/plotting/derived/fixation_metrics/fixation_probability_2015.csv"
+    ]
+  },
+  "sasa_selection_v1": {
+    "source_files": 4,
+    "canonical_paths": [
+      "data/plotting/derived/structure/sasa_selection.csv"
+    ]
+  },
+  "selection_mutations_v1": {
+    "source_files": 4,
+    "canonical_paths": [
+      "data/plotting/inputs/selection/h1n1_ha_mutations.csv",
+      "data/plotting/inputs/selection/h1n1_na_mutations.csv",
+      "data/plotting/inputs/selection/h3n2_ha_mutations.csv",
+      "data/plotting/inputs/selection/h3n2_na_mutations.csv"
+    ]
+  },
+  "selection_time_series_legacy_matrix_v1": {
+    "source_files": 4,
+    "canonical_paths": [
+      "data/plotting/inputs/selection/h1n1_ha_fitness_change.dat",
+      "data/plotting/inputs/selection/h1n1_observation_dates.dat",
+      "data/plotting/inputs/selection/h3n2_ha_fitness_change.dat",
+      "data/plotting/inputs/selection/h3n2_observation_dates.dat"
+    ]
+  },
+  "structure_asset_v1": {
+    "source_files": 5,
+    "canonical_paths": [
+      "data/plotting/inputs/structure/h1n1_ha_3lzg_assembly1.cif",
+      "data/plotting/inputs/structure/h1n1_ha_surface.png",
+      "data/plotting/inputs/structure/h3n2_ha_4we8_assembly1.cif",
+      "data/plotting/inputs/structure/h3n2_ha_surface.png",
+      "data/plotting/inputs/structure/selection_colorbar.png"
+    ]
+  },
+  "surveillance_counts_v1": {
+    "source_files": 1,
+    "canonical_paths": [
+      "data/plotting/inputs/surveillance/sequences_by_year.csv"
+    ]
+  },
+  "toy_model_example_v1": {
+    "source_files": 3,
+    "canonical_paths": [
+      "data/plotting/inputs/examples/toy_model_final_fitness.txt",
+      "data/plotting/inputs/examples/toy_model_frequencies.txt",
+      "data/plotting/inputs/examples/toy_model_initial_fitness.txt"
+    ]
+  }
+}

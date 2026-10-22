@@ -1,4 +1,5 @@
 # Python files
+.venv
 __pycache__
 .ipynb_checkpoints
 */.ipynb_checkpoints
@@ -7,3 +8,17 @@ __pycache__
 .DS_Store
 */.DS_Store
 */*/.DS_Store
+
+# Nonpublic data
+data/GISAID
+
+# Local migration archives may contain nonpublic or untracked source material.
+/archive/*/original/
+/archive/*/git_state/
+/archive/*/SHA256SUMS
+/archive/*/archive_summary.json
+/archive/*/file_manifest.csv
+/archive/*/path_mapping.csv
+/archive/*/schema_inventory.csv
+/archive/
+/tmp/
