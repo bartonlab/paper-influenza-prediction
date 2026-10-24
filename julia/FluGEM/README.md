@@ -244,18 +244,11 @@ is built by `run_name` in `src/shared/cli.jl`:
 # Notebooks and quick checks
 
 Each notebook builds a synthetic population with known selection coefficients (no real
-data needed), runs one task through the same functions as the scripts with small
-settings, and checks basic properties with `@assert`.
-
-The synthetic data come from `simulate_population` (`src/shared/synthetic_data.jl`), which
-uses the negative-binomial dynamics of `src/shared/population_simulation.jl`:
-* 20 sites with 4 states; selection coefficients drawn from Normal(0, 0.05);
-* 100 random starting sequences sharing 1000 individuals; R = 2, k = 0.1, ceiling 10 000;
-* mutation rate 10⁻³ per site per generation;
-* 1000 generations, one per day, with 20 sequences sampled per day.
-
-
-`evolve_pop_NB` is called with `reset_R = true`: `R` returns to 2 whenever the population is below the ceiling. 
+data needed), runs one task through the same functions as the scripts with small settings,
+and checks basic properties with `@assert`. The synthetic data come from
+`simulate_population` (`src/shared/synthetic_data.jl`), which uses the negative-binomial
+dynamics of `src/shared/population_simulation.jl`; each notebook states the settings it
+uses.
 
 | Notebook | Checks |
 |---|---|
