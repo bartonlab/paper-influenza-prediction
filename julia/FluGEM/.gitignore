@@ -1,0 +1,27 @@
+# --- data: keep the folder layout and documentation, never the data itself -------------
+# Raw sequences (GISAID-derived, not redistributable) and everything built from them.
+data/raw/*
+data/derived/**/*
+!data/raw/.gitkeep
+!data/derived/**/
+!data/derived/**/.gitkeep
+!data/README.md
+*.fasta
+*.fa
+*.fasta.gz
+# ... except the tiny synthetic examples
+!data/examples/*
+
+# --- run outputs and checkpoints --------------------------------------------------------
+outputs/
+*.jld2
+*.bson
+
+# --- notebooks ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- editors / OS ------------------------------------------------------------------------
+.DS_Store
+*.swp
+.vscode/
+.idea/
