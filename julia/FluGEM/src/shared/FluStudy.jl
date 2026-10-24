@@ -982,6 +982,14 @@ function create_study(fasta_path::AbstractString;
     data, names_per_row, regions_per_row, clades_per_row =
         bins_to_matrix(bins, protein_length; legacy_dedup = legacy_dedup)
 
+    size(data, 1) == 0 && error(
+        "No sequence passed the filters, so the data matrix is empty. Check that the " *
+        "records are aligned to $protein_length residues (the expected length for " *
+        "$protein; pass `protein_length`, or `--protein-length` from the scripts, to " *
+        "change it), that their dates fall inside $start_date .. $stop_date, and that " *
+        "they are below the $gap_threshold gap fraction. The counts logged above say " *
+        "which filter removed them.")
+
     # --- (e) impute ambiguous BEFORE clipping so the smoothing window has
     #         access to neighbouring time points outside [start, stop] ------
     data, _ = impute_ambiguous(data; tstep = tstep, tsmooth = tsmooth, q = q)

@@ -12,6 +12,8 @@
 #                                txt: read a precomputed data matrix
 #   --fasta PATH                 default data/raw/<subtype>_<protein>.fasta
 #   --txt PATH                   default data/derived/legacy/data_<subtype>_<protein>.txt
+#   --protein-length N           expected aligned length (default HA 566, NA 469); set it to run
+#                                a shorter alignment, such as the synthetic data/examples/ FASTA
 #
 #   SLURM arrays may also use the positional form:
 #     run_fixation_prediction.jl <task_id | YYYY-MM-DD> [subtype] [protein] [fasta|txt]
@@ -34,6 +36,7 @@ opts, pos = parse_cli(ARGS)
 subtype = get(opts, "subtype", length(pos) >= 2 ? pos[2] : "H3N2")
 protein = get(opts, "protein", length(pos) >= 3 ? pos[3] : "HA")
 source  = get(opts, "source", length(pos) >= 4 ? pos[4] : "fasta")
+protein_length = parse(Int, get(opts, "protein-length", string(FluStudy.PROTEIN_LENGTHS[protein])))
 start_date, stop_date = study_window(subtype)   # day 0 of the data matrix, end of the study
 
 # Prediction-date grid. The offset from day 0 leaves the fit enough data to infer
@@ -71,7 +74,8 @@ data = if source == "txt"
 elseif source == "fasta"
     # Same study settings as the EMD prediction (src/emd_prediction/run_emd_prediction.jl)
     FluStudy.create_study(get(opts, "fasta", joinpath(PROJECT_ROOT, "data", "raw", "$(subtype)_$(protein).fasta"));
-        protein = protein, start_date = start_date, stop_date = stop_date, tstep = 10.0, tsmooth = TSMOOTH).data
+        protein = protein, protein_length = protein_length, start_date = start_date,
+        stop_date = stop_date, tstep = 10.0, tsmooth = TSMOOTH).data
 else
     error("Unknown data source \"$source\" (use fasta or txt)")
 end

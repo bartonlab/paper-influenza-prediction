@@ -13,6 +13,9 @@
 #   julia --project=. src/map_estimation/run_map_estimation.jl [subtype] [protein]      # positional form
 #
 #   Defaults: H3N2 HA, data/raw/<subtype>_<protein>.fasta.
+#   --protein-length N sets the expected aligned length (default HA 566, NA 469), for running a
+#   shorter alignment such as the synthetic data/examples/ FASTA. Positions are then not
+#   alignment positions, so the HA Domain column is left out.
 using Dates
 using DataFrames
 using CSV
@@ -36,6 +39,7 @@ config = (
     # --- study ---
     subtype        = subtype,
     protein        = protein,
+    protein_length = parse(Int, get(opts, "protein-length", string(FluStudy.PROTEIN_LENGTHS[protein]))),
     fasta_path     = get(opts, "fasta", joinpath(PROJECT_ROOT, "data", "raw", "$(subtype)_$(protein).fasta")),
     start_date     = start_date,
     stop_date      = stop_date,
@@ -54,12 +58,13 @@ config = (
 # Study + MAP estimate over the full window
 # ---------------------------------------------------------------------------
 @time study = create_study(config.fasta_path;
-    protein    = config.protein,
-    start_date = config.start_date,
-    stop_date  = config.stop_date,
-    tstep      = config.tstep,
-    tsmooth    = config.tsmooth,
-    q          = config.q,
+    protein        = config.protein,
+    protein_length = config.protein_length,
+    start_date     = config.start_date,
+    stop_date      = config.stop_date,
+    tstep          = config.tstep,
+    tsmooth        = config.tsmooth,
+    q              = config.q,
 )
 println("data: $(size(study.data))")
 
@@ -74,8 +79,11 @@ map_result = MAPestimate(study.data, config.stop_date, config.subtype;
 # ---------------------------------------------------------------------------
 # Filter + export
 # ---------------------------------------------------------------------------
+# The Domain column labels alignment positions, so it only applies to a full-length
+# alignment; a shorter --protein-length gets no domain column, as in the notebooks.
+full_length = config.protein_length == FluStudy.PROTEIN_LENGTHS[config.protein]
 df = map_selection_table(map_result; q = config.q, freq_threshold = config.freq_threshold,
-                         protein = config.protein, subtype = config.subtype)
+                         protein = full_length ? config.protein : "other", subtype = config.subtype)
 
 mkpath(config.output_dir)
 out_path = joinpath(config.output_dir, run_name("map_selection", config.subtype, config.protein) * ".csv")

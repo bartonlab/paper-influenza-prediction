@@ -158,6 +158,26 @@ agree when you run from here. Every script takes `--subtype` (`H3N2`, `H1N1`), `
 (`HA`, `NA`) and `--fasta PATH`. The defaults are H3N2, HA and
 `data/raw/<subtype>_<protein>.fasta`.
 
+## Checking the installation without real data
+
+The sequences are not part of the repository, so tasks 1 and 2 also take
+`--protein-length N`, the expected aligned length (default HA 566, NA 469). Setting it
+runs them on the small synthetic FASTA in `data/examples/`, which is enough to check that
+an installation works end to end:
+
+```bash
+julia --project=. src/map_estimation/run_map_estimation.jl \
+      --fasta data/examples/synthetic_H3N2_HA.fasta --protein-length 20
+
+julia --project=. src/fixation_prediction/run_fixation_prediction.jl \
+      --fasta data/examples/synthetic_H3N2_HA.fasta --protein-length 20 \
+      --prediction-date 2009-01-20
+```
+
+Each finishes in under a minute and writes to `outputs/`. The positions are then sites of
+a 20-site synthetic alignment rather than HA alignment positions, so task 1 leaves out the
+`Domain` column. The notebooks cover task 3 on synthetic data.
+
 ### 1. MAP selection coefficients
 
 ```bash
