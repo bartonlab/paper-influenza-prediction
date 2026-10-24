@@ -147,11 +147,6 @@ All three tasks run for **H3N2 HA, H3N2 NA, H1N1 HA and H1N1 NA**.
 
   These are positions in the 566-column alignment (`ha_domain` in
   `src/map_estimation/map_selection.jl`), so check them against your own alignment.
-* **Prediction dates.** Task 2's task-id grid is a 10-day grid of prediction dates, set
-  relative to day 0 of the subtype. Its ends are a compromise: it has to start late enough
-  that the fit has enough data to infer selection, and end early enough that every date
-  still has future data to establish each mutation's fate, while leaving enough dates to
-  summarise. Dates outside the study window are rejected.
 
 # Running the analyses
 
@@ -189,6 +184,12 @@ julia --project=. src/fixation_prediction/run_fixation_prediction.jl $SLURM_ARRA
 # precomputed data matrix instead of the FASTA
 julia --project=. src/fixation_prediction/run_fixation_prediction.jl --prediction-date 2010-01-03 --source txt --txt data/derived/legacy/data_H3N2_HA.txt
 ```
+
+`--task-id` picks a date from a 10-day grid, set relative to day 0 of the subtype. The
+ends of the grid are a compromise: it has to start late enough that the fit has enough
+data to infer selection, and end early enough that every date still has future data to
+establish each mutation's fate, while leaving enough dates to summarise. Prediction dates
+outside the study window are rejected.
 
 Each run writes
 `outputs/fixation_prediction/<subtype>_<protein>_<source>/fixation_<subtype>_<protein>_<date>.csv`,
