@@ -252,9 +252,9 @@ uses.
 
 | Notebook | Checks |
 |---|---|
-| `01_map_estimation_quickcheck` | FASTA → data matrix round trip; MAP coefficients follow the true ones (correlation > 0.5, sign agreement > 0.6 for \|s\| > 0.05, reference = 0); the 1% / two-time-point filter keeps exactly the right alleles |
-| `02_fixation_prediction_quickcheck` | P(fix), P(loss) in [0, 1] for every (site, state); prediction day; summary over several dates |
-| `03_emd_prediction_quickcheck` | All methods present with finite EMD; Lower Bound ≤ Null; distributions normalised; `save_pipeline_run` output |
+| `01_map_estimation_quickcheck` | FASTA → data matrix round trip; MAP coefficients against the true ones; the 1% / two-time-point allele filter |
+| `02_fixation_prediction_quickcheck` | fixation and loss probabilities; prediction day; summary over several dates |
+| `03_emd_prediction_quickcheck` | EMD of every method; the lower-bound ordering; distribution normalisation; `save_pipeline_run` output |
 
 To run them:
 
