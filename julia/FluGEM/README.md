@@ -161,7 +161,7 @@ julia --project=. src/map_estimation/run_map_estimation.jl --subtype H1N1 --prot
 ```
 
 This fits the whole study window of the subtype and writes
-`outputs/map_estimation/map_selection_<subtype>_<protein>_<start>_<stop>_gamma20_tsmooth60_minfreq0.01.csv`,
+`outputs/map_estimation/map_selection_<subtype>_<protein>.csv`,
 with the columns `Position, Domain (HA only), Reference, Mutation, Selection_coefficient`.
 It lists the alleles seen above 1% at two consecutive time points at least once. Settings
 (`gamma`, smoothing, threshold) are in the `config` block at the top of the script.
@@ -181,7 +181,7 @@ julia --project=. src/fixation_prediction/run_fixation_prediction.jl --predictio
 ```
 
 Each run writes
-`outputs/fixation_prediction/<subtype>_<protein>_<source>/fixation_<subtype>_<protein>_<date>_noise1_tsmooth60_gamma20.csv`,
+`outputs/fixation_prediction/<subtype>_<protein>_<source>/fixation_<subtype>_<protein>_<date>.csv`,
 with one row per (site, amino acid). The columns are the observed frequency trajectory,
 the MAP selection coefficient, the simulated P(fixation) and P(loss) with mean
 times, and the true future fate. The settings (`GAMMA`, `TSMOOTH`, `NOISE`, `M`) are at the
@@ -226,13 +226,9 @@ is built by `run_name` in `src/shared/cli.jl`:
 
 | Task | File name |
 |---|---|
-| 1 | `map_selection_H3N2_HA_2009-01-01_2020-03-01_gamma20_tsmooth60_minfreq0.01.csv` |
-| 2 | `fixation_H3N2_HA_2010-01-03_noise1_tsmooth60_gamma20.csv` |
-| 3 | `predictions_H3N2_HA_2013-02-03_h270_init2009-01-01_gamma20_tsmooth60_noisefalse.csv` (and `d1_…`, `output_genmodel_…`, … with the same tag) |
-
-Dates are the study window (task 1), the prediction date (task 2), and the prediction date
-plus the initial date (task 3, `init…`). In task 2 `noise` is 0, 1 or 2 (MAP coefficients;
-plus posterior covariance; plus a diagonal term). In task 3 it is `true`/`false`.
+| 1 | `map_selection_<subtype>_<protein>.csv` |
+| 2 | `fixation_<subtype>_<protein>_<prediction date>.csv` |
+| 3 | `predictions_<tag>.csv` (and `d1_…`, `output_genmodel_…`, … with the same tag) |
 
 # Notebooks and quick checks
 

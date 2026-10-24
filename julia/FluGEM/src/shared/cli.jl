@@ -31,12 +31,13 @@ name_value(x) = string(x)
 """
     run_name(kind, subtype, protein, dates...; params...) -> String
 
-File-name stem `<kind>_<subtype>_<protein>_<date>[_<date>]_<key><value>...`, used by all
+File-name stem `<kind>_<subtype>_<protein>[_<date>...][_<key><value>...]`, used by all
 three tasks. For example
 
-    run_name("fixation", "H3N2", "HA", Date(2010, 1, 3); noise = 1, tsmooth = 60.0, gamma = 20.0)
+    run_name("fixation", "H3N2", "HA", Date(2010, 1, 3))
+    run_name("", "H3N2", "HA", Date(2013, 2, 3); h = 270)
 
-gives `fixation_H3N2_HA_2010-01-03_noise1_tsmooth60_gamma20`. An empty `kind` is left out.
+give `fixation_H3N2_HA_2010-01-03` and `H3N2_HA_2013-02-03_h270`. An empty `kind` is left out.
 """
 function run_name(kind::AbstractString, subtype::AbstractString, protein::AbstractString, dates...; params...)
     parts = String[string(d) for d in dates]

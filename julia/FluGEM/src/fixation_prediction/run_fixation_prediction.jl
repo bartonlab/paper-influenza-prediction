@@ -17,7 +17,7 @@
 #     run_fixation_prediction.jl <task_id | YYYY-MM-DD> [subtype] [protein] [fasta|txt]
 #
 #   Output: outputs/fixation_prediction/<subtype>_<protein>_<source>/
-#           fixation_<subtype>_<protein>_<prediction date>_noise<n>_tsmooth<σ>_gamma<γ>.csv
+#           fixation_<subtype>_<protein>_<prediction date>.csv
 using Dates
 using DelimitedFiles
 
@@ -77,8 +77,7 @@ end
 # Run and save
 # ---------------------------------------------------------------------------
 out_dir = joinpath(PROJECT_ROOT, "outputs", "fixation_prediction", "$(subtype)_$(protein)_$(source)")
-out_file = joinpath(out_dir, run_name("fixation", subtype, protein, prediction_date;
-                                      noise = NOISE, tsmooth = TSMOOTH, gamma = GAMMA) * ".csv")
+out_file = joinpath(out_dir, run_name("fixation", subtype, protein, prediction_date) * ".csv")
 
 run_simulation(data, prediction_date; start_date = start_date, stop_date = stop_date,
                gamma = GAMMA, tsmooth = TSMOOTH, noise = NOISE, M = M, out_file = out_file)

@@ -24,7 +24,8 @@
 #
 #   Cache  : data/derived/study/   (FluStudy artifacts, built from the FASTA on first use)
 #   Outputs: outputs/emd_prediction/predictions_<tag>.csv + side-cars (see save_pipeline_run), with
-#            <tag> = <subtype>_<protein>_<prediction date>_h<horizon>_init<initial date>_gamma<γ>_tsmooth<σ>_noise<true|false>
+#            <tag> = <subtype>_<protein>_<prediction date>_h<horizon>, plus _init<initial date> when
+#            the fit does not start at the beginning of the study window
 using Dates
 using DataFrames
 using Base.Threads
@@ -159,9 +160,9 @@ data = study.data
 # ===========================================================================
 # Persist the run (predictions, h-vectors, side-car distributions)
 # ===========================================================================
-tag = run_name("", config.subtype, config.protein, config.observation_date;
-               h = config.Δ, init = config.initial_date, gamma = config.gamma,
-               tsmooth = config.tsmooth, noise = config.noise)
+tag_params = config.initial_date == start_date ? (h = config.Δ,) :
+                                                 (h = config.Δ, init = config.initial_date)
+tag = run_name("", config.subtype, config.protein, config.observation_date; tag_params...)
 paths = save_pipeline_run(
     pipeline_result,
     config.output_dir;

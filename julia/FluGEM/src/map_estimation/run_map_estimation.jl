@@ -6,7 +6,7 @@
 # 3. Keep only the non-gap alleles whose frequency exceeds `freq_threshold` at two
 #    consecutive time points at least once (`map_selection_table`).
 # 4. Write Position, Domain (HA only), Reference, Mutation and Selection_coefficient to
-#    outputs/map_estimation/map_selection_<subtype>_<protein>_<start>_<stop>_gamma<γ>_tsmooth<σ>_minfreq<f>.csv
+#    outputs/map_estimation/map_selection_<subtype>_<protein>.csv
 #
 # Usage (from the project root, julia/FluGEM/):
 #   julia --project=. src/map_estimation/run_map_estimation.jl [--subtype H3N2|H1N1] [--protein HA|NA] [--fasta PATH]
@@ -77,8 +77,6 @@ map_result = MAPestimate(study.data, config.stop_date, config.subtype;
 df = map_selection_table(map_result; q = config.q, freq_threshold = config.freq_threshold, protein = config.protein)
 
 mkpath(config.output_dir)
-out_path = joinpath(config.output_dir,
-    run_name("map_selection", config.subtype, config.protein, config.start_date, config.stop_date;
-             gamma = config.gamma, tsmooth = config.tsmooth, minfreq = config.freq_threshold) * ".csv")
+out_path = joinpath(config.output_dir, run_name("map_selection", config.subtype, config.protein) * ".csv")
 CSV.write(out_path, df)
 println("Saved $(nrow(df)) mutations to $out_path")
