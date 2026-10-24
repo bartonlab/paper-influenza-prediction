@@ -147,9 +147,11 @@ All three tasks run for **H3N2 HA, H3N2 NA, H1N1 HA and H1N1 NA**.
 
   These are positions in the 566-column alignment (`ha_domain` in
   `src/map_estimation/map_selection.jl`), so check them against your own alignment.
-* **H1N1 prediction dates.** Task 2's task-id grid starts 37 days after day 0 (2009-06-07
-  for H1N1, 2009-02-07 for H3N2). Prediction dates before the start of the study window
-  are rejected.
+* **Prediction dates.** Task 2's task-id grid is a 10-day grid of prediction dates, set
+  relative to day 0 of the subtype. Its ends are a compromise: it has to start late enough
+  that the fit has enough data to infer selection, and end early enough that every date
+  still has future data to establish each mutation's fate, while leaving enough dates to
+  summarise. Dates outside the study window are rejected.
 
 # Running the analyses
 
@@ -180,7 +182,7 @@ It lists the alleles seen above 1% at two consecutive time points at least once.
 # one prediction date (the last day of data used for the fit)
 julia --project=. src/fixation_prediction/run_fixation_prediction.jl --subtype H3N2 --protein HA --prediction-date 2010-01-03
 
-# SLURM array: task k = 10-day grid from 37 days after day 0 (H3N2: 1..402 = 2009-02-07 .. 2020-01-31)
+# SLURM array: task k = 10-day grid of prediction dates (H3N2: k = 1..402)
 julia --project=. src/fixation_prediction/run_fixation_prediction.jl --task-id $SLURM_ARRAY_TASK_ID --subtype H3N2 --protein HA
 julia --project=. src/fixation_prediction/run_fixation_prediction.jl $SLURM_ARRAY_TASK_ID H3N2 HA     # positional form
 

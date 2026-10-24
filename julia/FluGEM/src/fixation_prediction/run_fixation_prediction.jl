@@ -36,6 +36,9 @@ protein = get(opts, "protein", length(pos) >= 3 ? pos[3] : "HA")
 source  = get(opts, "source", length(pos) >= 4 ? pos[4] : "fasta")
 start_date, stop_date = study_window(subtype)   # day 0 of the data matrix, end of the study
 
+# Prediction-date grid. The offset from day 0 leaves the fit enough data to infer
+# selection; the end date leaves every prediction enough future data to establish each
+# mutation's fate. Both are chosen to still leave enough dates to summarise.
 const TASK_STEP_DAYS = 10
 task_origin = start_date + Day(37)
 task_end    = Date("2020-01-31")
