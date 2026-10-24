@@ -74,7 +74,8 @@ map_result = MAPestimate(study.data, config.stop_date, config.subtype;
 # ---------------------------------------------------------------------------
 # Filter + export
 # ---------------------------------------------------------------------------
-df = map_selection_table(map_result; q = config.q, freq_threshold = config.freq_threshold, protein = config.protein)
+df = map_selection_table(map_result; q = config.q, freq_threshold = config.freq_threshold,
+                         protein = config.protein, subtype = config.subtype)
 
 mkpath(config.output_dir)
 out_path = joinpath(config.output_dir, run_name("map_selection", config.subtype, config.protein) * ".csv")

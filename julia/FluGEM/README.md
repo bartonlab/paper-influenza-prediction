@@ -136,9 +136,17 @@ All three tasks run for **H3N2 HA, H3N2 NA, H1N1 HA and H1N1 NA**.
 | `H1N1` | 2009-05-01 … 2020-03-01 | the scripts set day 0 automatically (`study_window` in `src/shared/cli.jl`); it must match the date hard-coded in `MAPestimate` and the EMD pipeline |
 
 * **Protein** only sets the expected sequence length (HA 566, NA 469, the same for both
-  subtypes) and, in task 1, whether the HA `Domain` column is added. Its boundaries are fixed
-  (signal peptide 1–17, HA1 18–344, HA2 345–566), so check them against your alignment.
-  NA tables have no domain column.
+  subtypes) and, in task 1, whether the HA `Domain` column is added. NA tables have no
+  domain column. The HA domain boundaries depend on the subtype, because the H3 signal
+  peptide is one residue shorter than the H1 one:
+
+  | Subtype | Signal peptide | HA1 | HA2 |
+  |---|---|---|---|
+  | `H3N2` | 1–16 | 17–345 | 346–566 |
+  | `H1N1` | 1–17 | 18–344 | 345–566 |
+
+  These are positions in the 566-column alignment (`ha_domain` in
+  `src/map_estimation/map_selection.jl`), so check them against your own alignment.
 * **H1N1 prediction dates.** Task 2's task-id grid starts 37 days after day 0 (2009-06-07
   for H1N1, 2009-02-07 for H3N2). Prediction dates before the start of the study window
   are rejected.
