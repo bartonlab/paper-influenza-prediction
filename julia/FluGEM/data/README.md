@@ -89,8 +89,12 @@ with random selection coefficients. Small enough to track:
 
 * `synthetic_data_matrix.txt` — data matrix, 20 sites, 30 days, 10 sampled sequences per day
   (states 2–5, i.e. A, C, D, E);
-* `synthetic_H3N2_HA.fasta` — the same samples as FASTA records (20-residue sequences;
+* `synthetic_20sites.fasta` — the same samples as FASTA records (20-residue sequences;
   read with `FluStudy.create_study(...; protein_length = 20)`).
+
+The records are dated 2009-01-02 to 2009-01-31, so they fall inside the H3N2 study window
+and work with the scripts' `--subtype H3N2` default. They are outside the H1N1 window,
+which opens on 2009-05-01, so `--subtype H1N1` rejects them.
 
 The notebooks generate the full synthetic input on the fly with the same generator
 (1000 days, 20 sequences per day).

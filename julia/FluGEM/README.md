@@ -238,10 +238,10 @@ installation works:
 
 ```bash
 julia --project=. src/map_estimation/run_map_estimation.jl \
-      --fasta data/examples/synthetic_H3N2_HA.fasta --protein-length 20
+      --fasta data/examples/synthetic_20sites.fasta --protein-length 20
 
 julia --project=. src/fixation_prediction/run_fixation_prediction.jl \
-      --fasta data/examples/synthetic_H3N2_HA.fasta --protein-length 20 \
+      --fasta data/examples/synthetic_20sites.fasta --protein-length 20 \
       --prediction-date 2009-01-20
 ```
 
