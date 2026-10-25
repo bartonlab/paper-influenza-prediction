@@ -15,7 +15,8 @@
 #   Defaults: H3N2 HA, data/raw/<subtype>_<protein>.fasta.
 #   --protein-length N sets the expected aligned length (default HA 566, NA 469), for running a
 #   shorter alignment such as the synthetic data/examples/ FASTA. Positions are then not
-#   alignment positions, so the HA Domain column is left out.
+#   alignment positions, so the HA Domain column is left out and the length goes into the
+#   output file name (..._L<N>.csv), which keeps such a run away from the full-length output.
 using Dates
 using DataFrames
 using CSV
@@ -39,7 +40,7 @@ config = (
     # --- study ---
     subtype        = subtype,
     protein        = protein,
-    protein_length = parse(Int, get(opts, "protein-length", string(FluStudy.PROTEIN_LENGTHS[protein]))),
+    protein_length = expected_protein_length(opts, protein),
     fasta_path     = get(opts, "fasta", joinpath(PROJECT_ROOT, "data", "raw", "$(subtype)_$(protein).fasta")),
     start_date     = start_date,
     stop_date      = stop_date,
@@ -79,13 +80,16 @@ map_result = MAPestimate(study.data, config.stop_date, config.subtype;
 # ---------------------------------------------------------------------------
 # Filter + export
 # ---------------------------------------------------------------------------
-# The Domain column labels alignment positions, so it only applies to a full-length
-# alignment; a shorter --protein-length gets no domain column, as in the notebooks.
-full_length = config.protein_length == FluStudy.PROTEIN_LENGTHS[config.protein]
+# The Domain column labels alignment positions, so it only applies to a full-length HA
+# alignment; a shorter --protein-length gets no Domain column, and carries the length in
+# its file name so that it never lands on the full-length output.
+full_length = is_full_length(config.protein, config.protein_length)
 df = map_selection_table(map_result; q = config.q, freq_threshold = config.freq_threshold,
-                         protein = full_length ? config.protein : "other", subtype = config.subtype)
+                         domain = full_length && config.protein == "HA" ? config.subtype : nothing)
 
 mkpath(config.output_dir)
-out_path = joinpath(config.output_dir, run_name("map_selection", config.subtype, config.protein) * ".csv")
+out_path = joinpath(config.output_dir,
+                    run_name("map_selection", config.subtype, config.protein;
+                             length_tag(config.protein, config.protein_length)...) * ".csv")
 CSV.write(out_path, df)
 println("Saved $(nrow(df)) mutations to $out_path")

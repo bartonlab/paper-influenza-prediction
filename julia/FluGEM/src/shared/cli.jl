@@ -24,6 +24,43 @@ function parse_cli(args)
     return options, positional
 end
 
+"""
+    expected_protein_length(opts, protein) -> Int
+
+Expected aligned length of the records: `--protein-length` when given, otherwise the
+default for `protein` (`FluStudy.PROTEIN_LENGTHS`, which has to be in scope). A protein
+with no default needs the option.
+"""
+function expected_protein_length(opts::AbstractDict, protein::AbstractString)
+    haskey(opts, "protein-length") && return parse(Int, opts["protein-length"])
+    defaults = FluStudy.PROTEIN_LENGTHS
+    haskey(defaults, protein) || error(
+        "No default aligned length for protein \"$protein\" (known: " *
+        join(["$k $(defaults[k])" for k in sort(collect(keys(defaults)))], ", ") *
+        "). Pass --protein-length N.")
+    return defaults[protein]
+end
+
+"""
+    is_full_length(protein, len) -> Bool
+
+Whether `len` is the default aligned length of `protein`, i.e. whether the positions are
+alignment positions. False for a partial or synthetic alignment, and for any protein
+without a default length.
+"""
+is_full_length(protein::AbstractString, len::Integer) =
+    get(FluStudy.PROTEIN_LENGTHS, protein, nothing) == len
+
+"""
+    length_tag(protein, len) -> NamedTuple
+
+`run_name` parameters that mark a non-default alignment length, empty for a full-length
+run. Keeping the length in the name is what stops a run on a short alignment (a smoke
+test on `data/examples/`, say) from overwriting a full-length result.
+"""
+length_tag(protein::AbstractString, len::Integer) =
+    is_full_length(protein, len) ? (;) : (L = len,)
+
 """Value as written in file names: `60.0 -> "60"`, `0.01 -> "0.01"`, `true -> "true"`."""
 name_value(x::AbstractFloat) = isinteger(x) ? string(Int(x)) : string(x)
 name_value(x) = string(x)

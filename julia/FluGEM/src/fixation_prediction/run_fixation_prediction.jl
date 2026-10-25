@@ -20,6 +20,10 @@
 #
 #   Output: outputs/fixation_prediction/<subtype>_<protein>_<source>/
 #           fixation_<subtype>_<protein>_<prediction date>.csv
+#
+#   A non-default --protein-length appends _L<N> to both the directory and the file name.
+#   `load_results` reads a whole directory, so this keeps a run on a short alignment out of
+#   the summary curves computed over the full-length results.
 using Dates
 using DelimitedFiles
 
@@ -36,7 +40,7 @@ opts, pos = parse_cli(ARGS)
 subtype = get(opts, "subtype", length(pos) >= 2 ? pos[2] : "H3N2")
 protein = get(opts, "protein", length(pos) >= 3 ? pos[3] : "HA")
 source  = get(opts, "source", length(pos) >= 4 ? pos[4] : "fasta")
-protein_length = parse(Int, get(opts, "protein-length", string(FluStudy.PROTEIN_LENGTHS[protein])))
+protein_length = expected_protein_length(opts, protein)
 start_date, stop_date = study_window(subtype)   # day 0 of the data matrix, end of the study
 
 # Prediction-date grid. The offset from day 0 leaves the fit enough data to infer
@@ -83,8 +87,12 @@ end
 # ---------------------------------------------------------------------------
 # Run and save
 # ---------------------------------------------------------------------------
-out_dir = joinpath(PROJECT_ROOT, "outputs", "fixation_prediction", "$(subtype)_$(protein)_$(source)")
-out_file = joinpath(out_dir, run_name("fixation", subtype, protein, prediction_date) * ".csv")
+# `load_results` aggregates every CSV in the directory, so a run on a non-default
+# alignment length gets its own directory as well as its own file name.
+tag = length_tag(protein, protein_length)
+dir_name = "$(subtype)_$(protein)_$(source)" * (isempty(tag) ? "" : "_L$(protein_length)")
+out_dir  = joinpath(PROJECT_ROOT, "outputs", "fixation_prediction", dir_name)
+out_file = joinpath(out_dir, run_name("fixation", subtype, protein, prediction_date; tag...) * ".csv")
 
 run_simulation(data, prediction_date; start_date = start_date, stop_date = stop_date,
                gamma = GAMMA, tsmooth = TSMOOTH, noise = NOISE, M = M, out_file = out_file)

@@ -356,7 +356,13 @@ function bins_to_matrix(bins::Dict{Tuple{Date,Date},Vector{Strain}}, L::Int;
     n_skip_len       = 0
 
     first_nonempty = findfirst(b -> !isempty(bins[b]), sorted_bins)
-    first_nonempty === nothing && error("All date bins are empty.")
+    if first_nonempty === nothing
+        error("Every date bin between $(first(sorted_bins)[1]) and " *
+              "$(last(sorted_bins)[2]) is empty, so there is nothing to build a matrix " *
+              "from: either no record passed the date and gap filters, or every date " *
+              "falls outside that range. The counts logged above say which filter " *
+              "removed them.")
+    end
     offset = first_nonempty - 1     # bin index `first_nonempty` -> day 1
 
     for (bin_idx, bin) in enumerate(sorted_bins)
@@ -872,6 +878,12 @@ function create_study(fasta_path::AbstractString;
     filter!(s -> has_date(s) && passes_gap_filter(s; threshold = gap_threshold),
             strains)
     @info "After date + gap filter: $(length(strains)) strains."
+    isempty(strains) && error(
+        "No record passed the date and gap filter: every one of them either carries no " *
+        "parsable date in its header or is more than $(100 * gap_threshold)% gaps. The " *
+        "date is read from the position of \"date\" in " *
+        "`header_fields=$header_fields`, so compare that order against a header line of " *
+        "the FASTA.")
 
     # --- (b*) backfill `clade` from a CSV when the FASTA doesn't carry it.
     #          When `clade_csv` is provided it OVERRIDES any clade value in
@@ -978,17 +990,23 @@ function create_study(fasta_path::AbstractString;
         binspacing = binspacing,
     )
 
+    isempty(bins) && error(
+        "The range $bin_origin .. $bin_stop holds no date bin, so no record can be " *
+        "kept. `bin_stop` defaults to one day past the latest date in the FASTA, so an " *
+        "empty range means the study window opens after the sequences end: check " *
+        "`start_date` ($start_date) against the record dates.")
+
     # --- (d) build numeric matrix with per-bin deduplication ---------------
     data, names_per_row, regions_per_row, clades_per_row =
         bins_to_matrix(bins, protein_length; legacy_dedup = legacy_dedup)
 
+    # Records that land in no bin are caught by the two guards above, so by here the only
+    # way to end up with no row is every record having been skipped for its length.
     size(data, 1) == 0 && error(
-        "No sequence passed the filters, so the data matrix is empty. Check that the " *
-        "records are aligned to $protein_length residues (the expected length for " *
-        "$protein; pass `protein_length`, or `--protein-length` from the scripts, to " *
-        "change it), that their dates fall inside $start_date .. $stop_date, and that " *
-        "they are below the $gap_threshold gap fraction. The counts logged above say " *
-        "which filter removed them.")
+        "The data matrix is empty because every record was skipped for its length: none " *
+        "is aligned to the $protein_length residues expected for $protein. Align the " *
+        "records to $protein_length columns, or pass `protein_length` " *
+        "(`--protein-length` from the scripts) to match the alignment you have.")
 
     # --- (e) impute ambiguous BEFORE clipping so the smoothing window has
     #         access to neighbouring time points outside [start, stop] ------
@@ -1010,6 +1028,14 @@ function create_study(fasta_path::AbstractString;
     names_per_row    = names_per_row[keep]
     regions_per_row  = regions_per_row[keep]
     clades_per_row   = clades_per_row[keep]
+
+    # Clipping and outlier filtering can both empty the matrix; `frequency_trajectory`
+    # below would fail on it in a way that says nothing about the cause.
+    size(data, 1) == 0 && error(
+        "No row is left after clipping to the study window $start_date .. $stop_date " *
+        "and dropping outliers (rows more than $mut_threshold mutations from the " *
+        "consensus of their $window_days-day window). The counts logged above say which " *
+        "of the two removed them.")
 
     # --- (i) resolve majority clade and region per row ----------------------
     row_clades        = String[]
