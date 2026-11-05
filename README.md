@@ -9,7 +9,7 @@ Edwin Rodriguez-Horta<sup>1</sup> and John P. Barton<sup>1,†</sup>
 <sup>1</sup> Department of Computational and Systems Biology, University of Pittsburgh School of Medicine, USA  
 <sup>†</sup> Address correspondence to: [jpbarton@pitt.edu](mailto:jpbarton@pitt.edu)
 
-The preprint is available at __INSERT LINK HERE__.
+The preprint is available at [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.10.27.762377).
 
 We infer the selection acting on every amino-acid mutation in influenza A/H3N2 and A/H1N1 hemagglutinin (HA) and neuraminidase (NA) from sequence time series. We then use the inferred fitness landscape to forecast influenza evolution.
 
